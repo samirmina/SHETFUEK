@@ -1,4 +1,4 @@
-# Zendesk FM Assistant — Clean Architecture Redesign
+# Zendesk Assistant — Clean Architecture Redesign
 
 ## Problem Statement
 Current codebase has:
