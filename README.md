@@ -1,6 +1,6 @@
 # Zendesk Assistant
 
-Browser extension and tools for assisting with Zendesk-based Fleet Management workflows.
+Browser extension and tools for assisting with Zendesk-based workflows.
 
 ## Structure
 
