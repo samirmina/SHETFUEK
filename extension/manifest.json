@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Zendesk FM Assistant",
+  "name": "Zendesk Assistant",
   "version": "1.0.0",
-  "description": "Deterministic rule-based assistant for Zendesk + FM ticket classification, macro selection, and response generation.",
+  "description": "Deterministic rule-based assistant for Zendesk ticket classification, macro selection, and response generation.",
   "permissions": [
     "activeTab",
     "tabs",
@@ -13,7 +13,6 @@
   "host_permissions": [
     "https://*.zendesk.com/*",
     "https://*.zendesk.eu/*",
-    "https://fm.voiapp.io/*",
     "http://localhost:27183/*"
   ],
   "background": {
@@ -26,8 +25,6 @@
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://fm.voiapp.io/*"],
-      "js": ["content/logger.js", "content/fm.js"],
       "run_at": "document_idle"
     }
   ],
