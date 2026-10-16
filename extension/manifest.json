@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Zendesk FM Assistant",
+  "version": "1.0.0",
+  "description": "Deterministic rule-based assistant for Zendesk + FM ticket classification, macro selection, and response generation.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "storage",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "https://*.zendesk.com/*",
+    "https://*.zendesk.eu/*",
+    "https://fm.voiapp.io/*",
+    "http://localhost:27183/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.zendesk.com/*", "https://*.zendesk.eu/*"],
+      "js": ["content/logger.js", "content/zendesk.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://fm.voiapp.io/*"],
+      "js": ["content/logger.js", "content/fm.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["sop-data.json"],
+      "matches": ["https://*.zendesk.com/*", "https://*.zendesk.eu/*"]
+    }
+  ]
+}

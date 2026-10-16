@@ -1,0 +1,11 @@
+{
+  "name": "voi-extension-native-host",
+  "version": "1.0.0",
+  "description": "Native messaging host for VOI Zendesk extension. Manages Ollama HTTP calls and RAG.",
+  "main": "host.js",
+  "scripts": {
+    "start": "node host.js",
+    "ingest": "node -e \"require('./rag/ingest').run()\""
+  },
+  "dependencies": {}
+}

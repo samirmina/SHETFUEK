@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zendesk FM Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Zendesk FM Assistant</h1>
+      <div class="status-bar">
+        <span id="ticketStatus" class="status-badge status-loading">Loading...</span>
+        <span id="fmStatus" class="status-badge status-loading">FM: Loading...</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="metadataSection" class="section">
+        <h2>Metadata</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" />
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" />
+          </div>
+          <div class="form-group">
+            <label for="partner">Partner</label>
+            <input type="text" id="partner" name="partner" />
+          </div>
+          <div class="form-group">
+            <label for="compensation">Compensation</label>
+            <select id="compensation" name="compensation">
+              <option value="N/A">N/A</option>
+              <option value="credits">Credits</option>
+              <option value="discount/voucher">Discount / Voucher</option>
+              <option value="refund">Refund</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section id="ticketDetailsSection" class="section">
+        <h2>Ticket Details</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="ticketIdDisplay">Ticket ID</label>
+            <input type="text" id="ticketIdDisplay" readonly />
+          </div>
+          <div class="form-group">
+            <label for="ticketStatusDisplay">Status</label>
+            <input type="text" id="ticketStatusDisplay" readonly />
+          </div>
+          <div class="form-group">
+            <label for="language">Language</label>
+            <input type="text" id="language" readonly />
+          </div>
+          <div class="form-group">
+            <label for="ivc">IVC</label>
+            <input type="text" id="ivc" readonly />
+          </div>
+          <div class="form-group">
+            <label for="userId">User ID</label>
+            <input type="text" id="userId" readonly />
+          </div>
+          <div class="form-group">
+            <label for="requesterEmail">Requester Email</label>
+            <input type="text" id="requesterEmail" readonly />
+          </div>
+        </div>
+      </section>
+
+      <section id="issueSection" class="section">
+        <h2>Issue Type</h2>
+        <div class="form-group">
+          <label for="issueTypeSearch">Search</label>
+          <input type="text" id="issueTypeSearch" name="issueTypeSearch" placeholder="Type to filter issue types..." autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="issueType">Select Issue Type</label>
+          <select id="issueType" name="issueType" size="8">
+            <option value="">Loading...</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="classifySection" class="section">
+        <h2>LLM Classification</h2>
+        <div class="button-row">
+          <button id="classifyBtn" class="btn-primary">Classify with AI</button>
+          <span id="classifyStatus" class="status-badge status-loading">Not run</span>
+        </div>
+        <div id="classifyError" class="error-box"></div>
+        <div id="manualFallback" class="info-box" style="display:none;">
+          <p><strong>Manual mode:</strong> LLM unavailable. Select issue type and macro manually below.</p>
+        </div>
+        <div class="form-group">
+          <label>Confidence</label>
+          <span id="confidenceDisplay" class="info-text">-</span>
+        </div>
+        <div class="form-group">
+          <label>Reasoning</label>
+          <span id="reasoningDisplay" class="info-text">-</span>
+        </div>
+        <div class="form-group">
+          <label>Dispositions</label>
+          <div id="dispositionContainer" class="chip-container"></div>
+        </div>
+      </section>
+
+      <section id="macroSection" class="section">
+        <h2>Macro</h2>
+        <div class="form-group">
+          <label for="macroSelect">Select Macro</label>
+          <select id="macroSelect" name="macroSelect">
+            <option value="">Loading...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="responseFormat">Response Format</label>
+          <select id="responseFormat" name="responseFormat">
+            <option value="email">Email (with greeting + sign-off)</option>
+            <option value="chat">Chat (direct answer)</option>
+          </select>
+        </div>
+        <div class="macro-header">
+          <span id="macroTitle" class="macro-title">Loading...</span>
+          <label class="switch">
+            <input type="checkbox" id="macroIncomplete" disabled />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <textarea id="macroPreview" class="preview-box" rows="6"></textarea>
+      </section>
+
+      <section id="fmSection" class="section">
+        <h2>FM Data</h2>
+        <div id="fmInfo" class="info-box">
+          <span id="fmMatchStatus">Loading...</span>
+          <select id="fmTabSelect" style="display:none;">
+            <option value="">Select FM tab...</option>
+          </select>
+          <button id="refreshFm" class="btn-secondary" style="display:none;">Refresh FM</button>
+        </div>
+        <div id="fmDetails" class="info-box" style="display:none;">
+          <p><strong>Page Type:</strong> <span id="fmPageType"></span></p>
+          <p><strong>Entity ID:</strong> <span id="fmEntityId"></span></p>
+          <p><strong>Flags:</strong> <span id="fmFlags"></span></p>
+        </div>
+      </section>
+
+      <section id="supplementSection" class="section">
+        <h2>Supplement</h2>
+        <textarea id="supplementPreview" class="preview-box" readonly rows="4"></textarea>
+      </section>
+
+      <section id="responseSection" class="section">
+        <h2>Response</h2>
+        <textarea id="responsePreview" class="preview-box" rows="10"></textarea>
+        <div class="button-row">
+          <button id="copyResponse" class="btn-primary">Copy Response</button>
+          <button id="injectResponse" class="btn-primary">Inject into Zendesk</button>
+        </div>
+      </section>
+
+      <section id="adminNotesSection" class="section">
+        <h2>Admin Notes</h2>
+        <div class="form-group">
+          <label for="adminIssue">Issue</label>
+          <textarea id="adminIssue" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="adminSolution">Solution</label>
+          <textarea id="adminSolution" rows="2"></textarea>
+        </div>
+          <div class="form-group">
+            <label for="adminTicketNotes">Other</label>
+            <textarea id="adminTicketNotes" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="adminDocumented">Supporting documentation</label>
+            <textarea id="adminDocumented" rows="2"></textarea>
+          </div>
+        <button id="copyAdminNotes" class="btn-secondary">Copy Admin Notes</button>
+      </section>
+
+      <section id="resolveSection" class="section">
+        <div class="button-row">
+          <button id="resolveTicket" class="btn-success">Resolve Ticket</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

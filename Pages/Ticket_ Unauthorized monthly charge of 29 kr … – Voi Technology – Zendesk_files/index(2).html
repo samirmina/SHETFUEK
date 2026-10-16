@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!-- saved from url=(0219)https://1251693.apps.zdusercontent.com/1251693/assets/1789051745-15dc6de79e349b91ee8dd00dd9b8cd29/index.html?origin=https%3A%2F%2Fvoitechnology.zendesk.com&app_guid=c887e850-349c-47dc-a056-a6f1593f3f17&colorScheme=light -->
+<html lang="en" dir="auto"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+
+    <script>
+      function __safeResolve(stack) {
+        try { return (window.__resolveStack ? window.__resolveStack(stack) : stack); }
+        catch (_e) { return stack; }
+      }
+      window.onerror = function(message, source, lineno, colno, error) {
+        console.log({error});
+        window.parent.postMessage({
+          type: 'iframe-error',
+          error: error?.toString(),
+          stack: __safeResolve(error?.stack),
+          message,
+          source,
+          lineno,
+          colno
+        }, '*');
+        return false;
+      };
+
+      // Also catch unhandled promise rejections
+      window.addEventListener('unhandledrejection', function(event) {
+        window.parent.postMessage({
+          type: 'iframe-error',
+          error: event.reason?.toString(),
+          stack: __safeResolve(event.reason?.stack)
+        }, '*');
+      });
+
+      // Forward console.error calls to the parent so the test-app runner can surface them.
+      // The original console.error is still invoked so the iframe's own devtools are unaffected.
+      (function () {
+        try {
+          var originalConsoleError = console.error.bind(console);
+          console.error = function () {
+            try {
+              var serialized = Array.prototype.slice.call(arguments).map(function (arg) {
+                if (arg instanceof Error) {
+                  return { name: arg.name, message: arg.message, stack: arg.stack };
+                }
+                if (typeof arg === 'string') {
+                  return arg;
+                }
+                try {
+                  return JSON.parse(JSON.stringify(arg));
+                } catch (_e) {
+                  return String(arg);
+                }
+              });
+              window.parent.postMessage({
+                type: 'iframe-console',
+                level: 'error',
+                args: serialized
+              }, '*');
+            } catch (_err) {
+              // Swallow serialization/postMessage errors so we never break the app.
+            }
+            return originalConsoleError.apply(console, arguments);
+          };
+        } catch (_e) {
+          // If we cannot wrap console.error for some reason, leave it as-is.
+        }
+      })();
+    </script>
+
+    <style>
+        html {
+          --tw-bg-opacity: 1;
+          --tw-text-opacity: 1;
+          font-feature-settings: "kern", "kern";
+          background-color: #fff;
+          box-sizing: border-box;
+          overflow-y: auto!important;
+          color: #293239;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif;
+          font-kerning: normal;
+          font-size: 14px;
+          line-height: 20px;
+          min-height: 100%;
+      }
+
+      *,:after,:before{
+      	box-sizing:border-box;
+      }
+
+      html{
+      	font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+      	line-height:1.15;
+      	-webkit-text-size-adjust:100%;
+      	-moz-tab-size:4;
+      	  -o-tab-size:4;
+      	     tab-size:4;
+      }
+
+      body{
+      	margin:0;
+      }
+
+      b,strong{
+      	font-weight:bolder;
+      }
+
+      code,kbd,pre,samp{
+      	font-family:ui-monospace,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+      	font-size:1em;
+      }
+
+      small{
+      	font-size:80%;
+      }
+
+      sub,sup{
+      	font-size:75%;
+      	line-height:0;
+      	position:relative;
+      	vertical-align:baseline;
+      }
+
+      sub{
+      	bottom:-.25em;
+      }
+
+      sup{
+      	top:-.5em;
+      }
+
+      table{
+      	border-color:currentcolor;
+      }
+
+      button,input,optgroup,select,textarea{
+      	font-family:inherit;
+      	font-size:100%;
+      	line-height:1.15;
+      	margin:0;
+      }
+
+      [type=button],[type=reset],[type=submit],button{
+      	-webkit-appearance:button;
+      }
+
+      legend{
+      	padding:0;
+      }
+
+      progress{
+      	vertical-align:baseline;
+      }
+
+      :::-webkit-inner-spin-button,::-webkit-outer-spin-button{
+      	height:auto;
+      }
+
+      [type=search]{
+      	-webkit-appearance:textfield;
+      	outline-offset:-2px;
+      }
+
+      :::-webkit-search-decoration{
+      	-webkit-appearance:none;
+      }
+
+      :::-webkit-file-upload-button{
+      	-webkit-appearance:button;
+      	font:inherit;
+      }
+
+      summary{
+      	display:list-item;
+      }
+
+      /* Additional normalization (kept distinct from initial block for clarity) */
+      html {
+      	background-color: #fff;
+      	min-height: 100%;
+      	box-sizing: border-box;
+      	overflow-y: scroll;
+      	line-height: 20px;
+      	color: #293239;
+      	font-feature-settings: "kern", "kern";
+      	font-kerning: normal;
+      	font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+      	font-size: 14px;
+      }
+
+      * {
+      	font-weight: inherit;
+      }
+
+      *,:after,:before {
+      	box-sizing: inherit;
+      }
+
+      a {
+      	color: #1f73b7;
+      }
+
+      b {
+      	font-weight: 600;
+      }
+
+      button {
+      	cursor: pointer;
+      	padding: 0;
+      }
+
+      button,input,optgroup,select,textarea {
+      	line-height: inherit;
+      	font-family: inherit;
+      }
+
+      code {
+      	font-size: .95em;
+      }
+
+      code,kbd,pre,samp {
+      	font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+      }
+
+      em {
+      	font-style: inherit;
+      }
+
+      fieldset,iframe {
+      	border-width: 0;
+      }
+
+      h1,h2,h3,h4,h5,h6 {
+      	font-size: inherit;
+      }
+
+      blockquote,dd,dl,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,ol,p,pre,ul {
+      	margin: 0;
+      	padding: 0;
+      }
+
+      hr {
+      	border: none;
+      	border-top: 1px solid;
+      	border-color: #d8dcde;
+      }
+
+      ins,u {
+      	text-decoration-line: none;
+      }
+
+      ol,ul {
+      	list-style-type: none;
+      }
+
+      img {
+      	max-width: 100%;
+      }
+
+      strong {
+      	font-weight: inherit;
+      }
+
+      svg {
+      	max-height: 100%;
+      }
+
+      [tabindex="-1"]:focus {
+      	outline: none !important;
+      }
+    </style>
+
+    <title>Zendesk App Builder</title>
+    <script type="importmap">
+      {"imports":{"react":"https://static.zdassets.com/app_builder/react@18.js","react-dom":"https://static.zdassets.com/app_builder/react-dom@18.js","react-dom/client":"https://static.zdassets.com/app_builder/react-dom@18/client.js","styled-components":"https://static.zdassets.com/app_builder/styled-components@6.x.js","pdfjs-dist":"https://static.zdassets.com/app_builder/pdfjs-dist@4.10.38.js","tesseract.js":"https://static.zdassets.com/app_builder/tesseract.js@6.0.0.js","@zendeskgarden/react-theming":"https://static.zdassets.com/app_builder/@zendeskgarden/react-theming@9.x.js","@zendeskgarden/react-buttons":"https://static.zdassets.com/app_builder/@zendeskgarden/react-buttons@9.x.js","@zendeskgarden/react-grid":"https://static.zdassets.com/app_builder/@zendeskgarden/react-grid@9.x.js","@zendeskgarden/react-forms":"https://static.zdassets.com/app_builder/@zendeskgarden/react-forms@9.x.js","@zendeskgarden/react-tables":"https://static.zdassets.com/app_builder/@zendeskgarden/react-tables@9.x.js","@zendeskgarden/react-typography":"https://static.zdassets.com/app_builder/@zendeskgarden/react-typography@9.x.js","@zendeskgarden/react-loaders":"https://static.zdassets.com/app_builder/@zendeskgarden/react-loaders@9.x.js","@zendeskgarden/react-tags":"https://static.zdassets.com/app_builder/@zendeskgarden/react-tags@9.x.js","@zendeskgarden/react-tabs":"https://static.zdassets.com/app_builder/@zendeskgarden/react-tabs@9.x.js","@zendeskgarden/react-accordions":"https://static.zdassets.com/app_builder/@zendeskgarden/react-accordions@9.x.js","@zendeskgarden/react-tooltips":"https://static.zdassets.com/app_builder/@zendeskgarden/react-tooltips@9.x.js","@zendeskgarden/react-modals":"https://static.zdassets.com/app_builder/@zendeskgarden/react-modals@9.x.js","@zendeskgarden/react-notifications":"https://static.zdassets.com/app_builder/@zendeskgarden/react-notifications@9.x.js","@zendeskgarden/react-pagination":"https://static.zdassets.com/app_builder/@zendeskgarden/react-pagination@9.x.js","@zendeskgarden/react-dropdowns":"https://static.zdassets.com/app_builder/@zendeskgarden/react-dropdowns@9.x.js","@zendeskgarden/react-avatars":"https://static.zdassets.com/app_builder/@zendeskgarden/react-avatars@9.x.js","@zendeskgarden/react-breadcrumbs":"https://static.zdassets.com/app_builder/@zendeskgarden/react-breadcrumbs@9.x.js","@zendeskgarden/react-chrome":"https://static.zdassets.com/app_builder/@zendeskgarden/react-chrome@9.x.js","@zendeskgarden/react-colorpickers":"https://static.zdassets.com/app_builder/@zendeskgarden/react-colorpickers@9.x.js","@zendeskgarden/react-datepickers":"https://static.zdassets.com/app_builder/@zendeskgarden/react-datepickers@9.x.js","@zendeskgarden/react-draggable":"https://static.zdassets.com/app_builder/@zendeskgarden/react-draggable@9.x.js","recharts":"https://static.zdassets.com/app_builder/recharts@3.2.1.js"}}
+    </script>
+    <script type="text/javascript" src="./zaf_sdk.min(1).js.download"></script>
+  <style data-styled="active" data-styled-version="6.1.19"></style></head>
+  <body>
+    <div id="root"><div class="sc-hwkwBN dYeUVa"><div class="sc-bRKDuR fsVSes"><div data-garden-id="notifications.well" data-garden-version="9.12.2" class="StyledBase-sc-14syaqw-0 StyledWell-sc-a5831c-0 ijIWam fxjRVU"><h2 class="sc-hvigdm eFXEKm">Minute bundles/Legacy subscriptions</h2><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r0:--label" for=":r0:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Price of Voi Pass</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r0:--input" aria-labelledby=":r0:--label" type="number" min="0" step="0.01" placeholder="0.00" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r1:--label" for=":r1:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Duration of Pass (minutes)</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r1:--input" aria-labelledby=":r1:--label" type="number" min="1" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r2:--label" for=":r2:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of Minutes Unused</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r2:--input" aria-labelledby=":r2:--label" type="number" min="0" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div><div class="sc-jwTyAe eNWPSV">Amount to Refund</div><div class="sc-ggWZvA gOhBDr"><div class="sc-dTvVRJ jZasCt">—</div><button disabled="" data-garden-id="buttons.button" data-garden-version="9.12.2" type="button" class="StyledButton-sc-qe3ace-0 eJrlqC">Copy</button></div></div></div><div data-garden-id="notifications.well" data-garden-version="9.12.2" class="StyledBase-sc-14syaqw-0 StyledWell-sc-a5831c-0 ijIWam fxjRVU"><h2 class="sc-hvigdm eFXEKm">Other subscriptions</h2><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r3:--label" for=":r3:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Price of Voi Pass</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r3:--input" aria-labelledby=":r3:--label" type="number" min="0" step="0.01" placeholder="0.00" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r4:--label" for=":r4:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of Days in Pass</label><div data-garden-container-id="containers.field.hint" data-garden-container-version="3.0.20" id=":r4:--hint" data-garden-id="forms.input_hint" data-garden-version="9.12.2" class="StyledHint-sc-17c2wu8-0 ebEVVG">Fixed at 30 days</div><div class="sc-hjsuWn joCwnG">30</div></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r5:--label" for=":r5:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of Days Unused</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r5:--input" aria-labelledby=":r5:--label" type="number" min="0" max="30" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div><div class="sc-jwTyAe eNWPSV">Amount to Refund</div><div class="sc-ggWZvA gOhBDr"><div class="sc-dTvVRJ jZasCt">—</div><button disabled="" data-garden-id="buttons.button" data-garden-version="9.12.2" type="button" class="StyledButton-sc-qe3ace-0 eJrlqC">Copy</button></div></div></div><div data-garden-id="notifications.well" data-garden-version="9.12.2" class="StyledBase-sc-14syaqw-0 StyledWell-sc-a5831c-0 ijIWam fxjRVU"><h2 class="sc-hvigdm eFXEKm">Minute bundles (prorated refund)</h2><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r6:--label" for=":r6:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Price of Voi Pass</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r6:--input" aria-labelledby=":r6:--label" type="number" min="0" step="0.01" placeholder="0.00" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r7:--label" for=":r7:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Pass minutes</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r7:--input" aria-labelledby=":r7:--label" type="number" min="1" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r8:--label" for=":r8:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of Minutes Unused</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r8:--input" aria-labelledby=":r8:--label" type="number" min="0" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":r9:--label" for=":r9:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of Days Unused</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":r9:--input" aria-labelledby=":r9:--label" type="number" min="0" max="30" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div><div class="sc-jwTyAe eNWPSV">Amount to Refund</div><div class="sc-ggWZvA gOhBDr"><div class="sc-dTvVRJ jZasCt">—</div><button disabled="" data-garden-id="buttons.button" data-garden-version="9.12.2" type="button" class="StyledButton-sc-qe3ace-0 eJrlqC">Copy</button></div></div></div><div data-garden-id="notifications.well" data-garden-version="9.12.2" class="StyledBase-sc-14syaqw-0 StyledWell-sc-a5831c-0 ijIWam fxjRVU"><h2 class="sc-hvigdm eFXEKm">FUP subscription/Voi+ with FU benefits</h2><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":ra:--label" for=":ra:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Price of Voi Pass</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":ra:--input" aria-labelledby=":ra:--label" type="number" min="0" step="0.01" placeholder="0.00" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":rb:--label" for=":rb:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Unlock Fee cost</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":rb:--input" aria-labelledby=":rb:--label" type="number" min="0" step="0.01" placeholder="0.00" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":rc:--label" for=":rc:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of rides taken with pass</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":rc:--input" aria-labelledby=":rc:--label" type="number" min="0" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":rd:--label" for=":rd:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of days unused</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":rd:--input" aria-labelledby=":rd:--label" type="number" min="0" max="30" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div><div class="sc-jwTyAe eNWPSV">Amount to Refund</div><div class="sc-ggWZvA gOhBDr"><div class="sc-dTvVRJ jZasCt">—</div><button disabled="" data-garden-id="buttons.button" data-garden-version="9.12.2" type="button" class="StyledButton-sc-qe3ace-0 eJrlqC">Copy</button></div></div></div><div data-garden-id="notifications.well" data-garden-version="9.12.2" class="StyledBase-sc-14syaqw-0 StyledWell-sc-a5831c-0 ijIWam fxjRVU"><h2 class="sc-hvigdm eFXEKm">Voi+ PAYG discounted benefits</h2><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":re:--label" for=":re:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Price of Voi Pass</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":re:--input" aria-labelledby=":re:--label" type="number" min="0" step="0.01" placeholder="0.00" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":rf:--label" for=":rf:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Minute fee</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":rf:--input" aria-labelledby=":rf:--label" type="number" min="0" step="0.01" placeholder="0.00" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":rg:--label" for=":rg:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of minutes discounted</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":rg:--input" aria-labelledby=":rg:--label" type="number" min="0" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div class="sc-fhHczv gNjgve"><div data-garden-id="forms.field" data-garden-version="9.12.2" class="StyledField-sc-12gzfsu-0 cfiwuq"><label data-garden-container-id="containers.field.label" data-garden-container-version="3.0.20" id=":rh:--label" for=":rh:--input" data-garden-id="forms.input_label" data-garden-version="9.12.2" class="StyledLabel-sc-2utmsz-0 kQwUAc">Number of days unused</label><input data-garden-container-id="containers.field.input" data-garden-container-version="3.0.20" id=":rh:--input" aria-labelledby=":rh:--label" type="number" min="0" max="30" step="1" placeholder="0" data-garden-id="forms.input" data-garden-version="9.12.2" aria-invalid="false" class="StyledTextInput-sc-1r6733h-0 MowfB" value=""></div></div><div><div class="sc-jwTyAe eNWPSV">Amount to Refund</div><div class="sc-ggWZvA gOhBDr"><div class="sc-dTvVRJ jZasCt">—</div><button disabled="" data-garden-id="buttons.button" data-garden-version="9.12.2" type="button" class="StyledButton-sc-qe3ace-0 eJrlqC">Copy</button></div></div></div></div></div></div>
+
+    <script type="text/javascript">
+      window.zafClient = ZAFClient.init();
+
+      window?.zafClient?.invoke('resize', { width: '100%', height: '550px' });
+    </script>
+
+    <script type="module">
+          var __defProp = Object.defineProperty;
+      var __defProps = Object.defineProperties;
+      var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+      var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+      var __hasOwnProp = Object.prototype.hasOwnProperty;
+      var __propIsEnum = Object.prototype.propertyIsEnumerable;
+      var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+      var __spreadValues = (a, b) => {
+        for (var prop in b || (b = {}))
+          if (__hasOwnProp.call(b, prop))
+            __defNormalProp(a, prop, b[prop]);
+        if (__getOwnPropSymbols)
+          for (var prop of __getOwnPropSymbols(b)) {
+            if (__propIsEnum.call(b, prop))
+              __defNormalProp(a, prop, b[prop]);
+          }
+        return a;
+      };
+      var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+      var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+
+      // vfs:index.jsx
+      import { createRoot } from "react-dom/client";
+      import React7, { useState as useState6, useEffect } from "react";
+      import styled2 from "styled-components";
+      import { ThemeProvider, DEFAULT_THEME, getColor as getColor2 } from "@zendeskgarden/react-theming";
+
+      // vfs:App.jsx
+      import React6 from "react";
+
+      // vfs:components/Calculator1.jsx
+      import React, { useState } from "react";
+      import { Field, Input, Message } from "@zendeskgarden/react-forms";
+      import { Button } from "@zendeskgarden/react-buttons";
+      import { Well } from "@zendeskgarden/react-notifications";
+
+      // vfs:constants.js
+      var CALCULATOR_1_NAME = "Minute bundles/Legacy subscriptions";
+      var CALCULATOR_2_NAME = "Other subscriptions";
+      var CALCULATOR_3_NAME = "Minute bundles (prorated refund)";
+      var CALCULATOR_4_NAME = "FUP subscription/Voi+ with FU benefits";
+      var CALCULATOR_5_NAME = "Voi+ PAYG discounted benefits";
+      var FIXED_DAYS_IN_PASS = 30;
+      var COPY_SUCCESS_TIMEOUT = 2e3;
+
+      // vfs:utils/calculations.js
+      function calcMinuteRefund(price, duration, unusedMinutes) {
+        const p = parseFloat(price);
+        const d = parseFloat(duration);
+        const m = parseFloat(unusedMinutes);
+        if (isNaN(p) || isNaN(d) || isNaN(m) || d === 0) return { result: null, error: null };
+        if (m > d) return { result: null, error: "Unused minutes cannot exceed the total duration of the pass." };
+        const result = p / d * m;
+        if (result > p) return { result: null, error: "Refund amount cannot exceed the price of the pass." };
+        return { result, error: null };
+      }
+      function calcDayRefund(price, unusedDays) {
+        const p = parseFloat(price);
+        const d = parseFloat(unusedDays);
+        if (isNaN(p) || isNaN(d)) return { result: null, error: null };
+        if (d > 30) return { result: null, error: "Unused days cannot exceed 30 (the fixed pass duration)." };
+        const result = p / 30 * d;
+        if (result > p) return { result: null, error: "Refund amount cannot exceed the price of the pass." };
+        return { result, error: null };
+      }
+      function calcProratedMinuteRefund(price, duration, unusedMinutes, unusedDays) {
+        const p = parseFloat(price);
+        const passMinutes = parseFloat(duration);
+        const minutes = parseFloat(unusedMinutes);
+        const days = parseFloat(unusedDays);
+        if (isNaN(p) || isNaN(passMinutes) || isNaN(minutes) || isNaN(days) || passMinutes === 0) {
+          return { result: null, error: null };
+        }
+        if (minutes > passMinutes) return { result: null, error: "Unused minutes cannot exceed the total duration of the pass." };
+        if (days > 30) return { result: null, error: "Unused days cannot exceed 30." };
+        const usedMinutes = passMinutes - minutes;
+        const usedDays = 30 - days;
+        const usage = p * (usedMinutes / passMinutes);
+        const time = p * (usedDays / 30);
+        const result = Math.max(0, p - usage - time);
+        if (result > p) return { result: null, error: "Refund amount cannot exceed the price of the pass." };
+        return { result, error: null };
+      }
+      function calcFupRefund(price, unlockFee, rides, unusedDays) {
+        const p = parseFloat(price);
+        const fee = parseFloat(unlockFee);
+        const rideCount = parseFloat(rides);
+        const days = parseFloat(unusedDays);
+        if (isNaN(p) || isNaN(fee) || isNaN(rideCount) || isNaN(days)) {
+          return { result: null, error: null };
+        }
+        if (rideCount < 0) return { result: null, error: "Number of rides cannot be negative." };
+        if (days < 0 || days > 30) return { result: null, error: "Unused days must be between 0 and 30." };
+        const usage = fee * rideCount;
+        const time = p * ((30 - days) / 30);
+        const result = Math.max(0, p - usage - time);
+        return { result, error: null };
+      }
+      function calcPaygDiscountedRefund(price, minuteFee, discountedMinutes, unusedDays) {
+        const p = parseFloat(price);
+        const fee = parseFloat(minuteFee);
+        const minutes = parseFloat(discountedMinutes);
+        const days = parseFloat(unusedDays);
+        if (isNaN(p) || isNaN(fee) || isNaN(minutes) || isNaN(days)) {
+          return { result: null, error: null };
+        }
+        if (minutes < 0) return { result: null, error: "Number of minutes discounted cannot be negative." };
+        if (days < 0 || days > 30) return { result: null, error: "Unused days must be between 0 and 30." };
+        const usage = 0.2 * minutes * fee;
+        const time = p * ((30 - days) / 30);
+        const result = Math.max(0, p - usage - time);
+        return { result, error: null };
+      }
+      function formatCurrency(value) {
+        if (value === null || value === void 0) return "";
+        return value.toFixed(2);
+      }
+
+      // vfs:styles/AppStyles.js
+      import styled from "styled-components";
+      import { getColor } from "@zendeskgarden/react-theming";
+      var PageWrapper = styled.div`
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      `;
+      var SectionTitle = styled.h2`
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 0 12px 0;
+        color: ${(p) => getColor({ theme: p.theme, variable: "foreground.default" })};
+      `;
+      var FieldRow = styled.div`
+        margin-bottom: 12px;
+      `;
+      var ResultRow = styled.div`
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 4px;
+      `;
+      var ResultValue = styled.div`
+        flex: 1;
+        padding: 6px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: ${(p) => getColor({ theme: p.theme, variable: "background.subtle" })};
+        color: ${(p) => getColor({ theme: p.theme, variable: "foreground.default" })};
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+      `;
+      var ResultLabel = styled.div`
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: ${(p) => getColor({ theme: p.theme, variable: "foreground.subtle" })};
+      `;
+      var FixedValueDisplay = styled.div`
+        padding: 6px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: ${(p) => getColor({ theme: p.theme, variable: "background.subtle" })};
+        color: ${(p) => getColor({ theme: p.theme, variable: "foreground.subtle" })};
+        border: 1px solid ${(p) => getColor({ theme: p.theme, variable: "border.default" })};
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+      `;
+      var CopiedText = styled.span`
+        color: ${(p) => getColor({ theme: p.theme, variable: "foreground.primary" })};
+        font-size: 12px;
+      `;
+
+      // vfs:components/Calculator1.jsx
+      function Calculator1() {
+        const [price, setPrice] = useState("");
+        const [duration, setDuration] = useState("");
+        const [unusedMinutes, setUnusedMinutes] = useState("");
+        const [copied, setCopied] = useState(false);
+        const { result: refund, error } = calcMinuteRefund(price, duration, unusedMinutes);
+        const refundDisplay = refund !== null ? formatCurrency(refund) : "";
+        function handleCopy() {
+          if (refundDisplay === "") return;
+          navigator.clipboard.writeText(refundDisplay).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), COPY_SUCCESS_TIMEOUT);
+          });
+        }
+        return React.createElement(Well, { isRecessed: true }, React.createElement(SectionTitle, null, CALCULATOR_1_NAME), React.createElement(FieldRow, null, React.createElement(Field, null, React.createElement(Field.Label, null, "Price of Voi Pass"), React.createElement(
+          Input,
+          {
+            type: "number",
+            min: "0",
+            step: "0.01",
+            placeholder: "0.00",
+            value: price,
+            onChange: (e) => setPrice(e.target.value),
+            isCompact: true
+          }
+        ))), React.createElement(FieldRow, null, React.createElement(Field, null, React.createElement(Field.Label, null, "Duration of Pass (minutes)"), React.createElement(
+          Input,
+          {
+            type: "number",
+            min: "1",
+            step: "1",
+            placeholder: "0",
+            value: duration,
+            onChange: (e) => setDuration(e.target.value),
+            isCompact: true
+          }
+        ))), React.createElement(FieldRow, null, React.createElement(Field, null, React.createElement(Field.Label, null, "Number of Minutes Unused"), React.createElement(
+          Input,
+          {
+            type: "number",
+            min: "0",
+            step: "1",
+            placeholder: "0",
+            value: unusedMinutes,
+            onChange: (e) => setUnusedMinutes(e.target.value),
+            isCompact: true,
+            validation: error ? "error" : void 0
+          }
+        ), error && React.createElement(Message, { validation: "error" }, error))), React.createElement("div", null, React.createElement(ResultLabel, null, "Amount to Refund"), React.createElement(ResultRow, null, React.createElement(ResultValue, null, refundDisplay !== "" ? refundDisplay : "—"), React.createElement(
+          Button,
+          {
+            size: "small",
+            isBasic: true,
+            disabled: refundDisplay === "",
+            onClick: handleCopy
+          },
+          copied ? React.createElement(CopiedText, null, "Copied") : "Copy"
+        ))));
+      }
+
+      // vfs:components/Calculator2.jsx
+      import React2, { useState as useState2 } from "react";
+      import { Field as Field2, Input as Input2, Message as Message2 } from "@zendeskgarden/react-forms";
+      import { Button as Button2 } from "@zendeskgarden/react-buttons";
+      import { Well as Well2 } from "@zendeskgarden/react-notifications";
+      function Calculator2() {
+        const [price, setPrice] = useState2("");
+        const [unusedDays, setUnusedDays] = useState2("");
+        const [copied, setCopied] = useState2(false);
+        const { result: refund, error } = calcDayRefund(price, unusedDays);
+        const refundDisplay = refund !== null ? formatCurrency(refund) : "";
+        function handleCopy() {
+          if (refundDisplay === "") return;
+          navigator.clipboard.writeText(refundDisplay).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), COPY_SUCCESS_TIMEOUT);
+          });
+        }
+        return React2.createElement(Well2, { isRecessed: true }, React2.createElement(SectionTitle, null, CALCULATOR_2_NAME), React2.createElement(FieldRow, null, React2.createElement(Field2, null, React2.createElement(Field2.Label, null, "Price of Voi Pass"), React2.createElement(
+          Input2,
+          {
+            type: "number",
+            min: "0",
+            step: "0.01",
+            placeholder: "0.00",
+            value: price,
+            onChange: (e) => setPrice(e.target.value),
+            isCompact: true
+          }
+        ))), React2.createElement(FieldRow, null, React2.createElement(Field2, null, React2.createElement(Field2.Label, null, "Number of Days in Pass"), React2.createElement(Field2.Hint, null, "Fixed at ", FIXED_DAYS_IN_PASS, " days"), React2.createElement(FixedValueDisplay, null, FIXED_DAYS_IN_PASS))), React2.createElement(FieldRow, null, React2.createElement(Field2, null, React2.createElement(Field2.Label, null, "Number of Days Unused"), React2.createElement(
+          Input2,
+          {
+            type: "number",
+            min: "0",
+            max: FIXED_DAYS_IN_PASS,
+            step: "1",
+            placeholder: "0",
+            value: unusedDays,
+            onChange: (e) => setUnusedDays(e.target.value),
+            isCompact: true,
+            validation: error ? "error" : void 0
+          }
+        ), error && React2.createElement(Message2, { validation: "error" }, error))), React2.createElement("div", null, React2.createElement(ResultLabel, null, "Amount to Refund"), React2.createElement(ResultRow, null, React2.createElement(ResultValue, null, refundDisplay !== "" ? refundDisplay : "—"), React2.createElement(
+          Button2,
+          {
+            size: "small",
+            isBasic: true,
+            disabled: refundDisplay === "",
+            onClick: handleCopy
+          },
+          copied ? React2.createElement(CopiedText, null, "Copied") : "Copy"
+        ))));
+      }
+
+      // vfs:components/Calculator3.jsx
+      import React3, { useState as useState3 } from "react";
+      import { Field as Field3, Input as Input3 } from "@zendeskgarden/react-forms";
+      import { Button as Button3 } from "@zendeskgarden/react-buttons";
+      import { Well as Well3 } from "@zendeskgarden/react-notifications";
+      function Calculator3() {
+        const [price, setPrice] = useState3("");
+        const [duration, setDuration] = useState3("");
+        const [unusedMinutes, setUnusedMinutes] = useState3("");
+        const [unusedDays, setUnusedDays] = useState3("");
+        const [copied, setCopied] = useState3(false);
+        const { result: refund, error } = calcProratedMinuteRefund(price, duration, unusedMinutes, unusedDays);
+        const refundDisplay = refund !== null ? formatCurrency(refund) : "";
+        function handleCopy() {
+          if (refundDisplay === "") return;
+          navigator.clipboard.writeText(refundDisplay).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), COPY_SUCCESS_TIMEOUT);
+          });
+        }
+        return React3.createElement(Well3, { isRecessed: true }, React3.createElement(SectionTitle, null, CALCULATOR_3_NAME), React3.createElement(FieldRow, null, React3.createElement(Field3, null, React3.createElement(Field3.Label, null, "Price of Voi Pass"), React3.createElement(Input3, { type: "number", min: "0", step: "0.01", placeholder: "0.00", value: price, onChange: (e) => setPrice(e.target.value), isCompact: true }))), React3.createElement(FieldRow, null, React3.createElement(Field3, null, React3.createElement(Field3.Label, null, "Pass minutes"), React3.createElement(Input3, { type: "number", min: "1", step: "1", placeholder: "0", value: duration, onChange: (e) => setDuration(e.target.value), isCompact: true }))), React3.createElement(FieldRow, null, React3.createElement(Field3, null, React3.createElement(Field3.Label, null, "Number of Minutes Unused"), React3.createElement(Input3, { type: "number", min: "0", step: "1", placeholder: "0", value: unusedMinutes, onChange: (e) => setUnusedMinutes(e.target.value), isCompact: true, validation: error ? "danger" : void 0 }))), React3.createElement(FieldRow, null, React3.createElement(Field3, null, React3.createElement(Field3.Label, null, "Number of Days Unused"), React3.createElement(Input3, { type: "number", min: "0", max: FIXED_DAYS_IN_PASS, step: "1", placeholder: "0", value: unusedDays, onChange: (e) => setUnusedDays(e.target.value), isCompact: true, validation: error ? "danger" : void 0 }), error && React3.createElement(Field3.Message, { validation: "danger" }, error))), React3.createElement("div", null, React3.createElement(ResultLabel, null, "Amount to Refund"), React3.createElement(ResultRow, null, React3.createElement(ResultValue, null, refundDisplay !== "" ? refundDisplay : "—"), React3.createElement(Button3, { size: "small", isBasic: true, disabled: refundDisplay === "", onClick: handleCopy }, copied ? React3.createElement(CopiedText, null, "Copied") : "Copy"))));
+      }
+
+      // vfs:components/Calculator4.jsx
+      import React4, { useState as useState4 } from "react";
+      import { Field as Field4, Input as Input4 } from "@zendeskgarden/react-forms";
+      import { Button as Button4 } from "@zendeskgarden/react-buttons";
+      import { Well as Well4 } from "@zendeskgarden/react-notifications";
+      function Calculator4() {
+        const [price, setPrice] = useState4("");
+        const [unlockFee, setUnlockFee] = useState4("");
+        const [rides, setRides] = useState4("");
+        const [unusedDays, setUnusedDays] = useState4("");
+        const [copied, setCopied] = useState4(false);
+        const { result: refund, error } = calcFupRefund(price, unlockFee, rides, unusedDays);
+        const refundDisplay = refund !== null ? formatCurrency(refund) : "";
+        function handleCopy() {
+          if (refundDisplay === "") return;
+          navigator.clipboard.writeText(refundDisplay).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), COPY_SUCCESS_TIMEOUT);
+          });
+        }
+        return React4.createElement(Well4, { isRecessed: true }, React4.createElement(SectionTitle, null, CALCULATOR_4_NAME), React4.createElement(FieldRow, null, React4.createElement(Field4, null, React4.createElement(Field4.Label, null, "Price of Voi Pass"), React4.createElement(Input4, { type: "number", min: "0", step: "0.01", placeholder: "0.00", value: price, onChange: (e) => setPrice(e.target.value), isCompact: true }))), React4.createElement(FieldRow, null, React4.createElement(Field4, null, React4.createElement(Field4.Label, null, "Unlock Fee cost"), React4.createElement(Input4, { type: "number", min: "0", step: "0.01", placeholder: "0.00", value: unlockFee, onChange: (e) => setUnlockFee(e.target.value), isCompact: true }))), React4.createElement(FieldRow, null, React4.createElement(Field4, null, React4.createElement(Field4.Label, null, "Number of rides taken with pass"), React4.createElement(Input4, { type: "number", min: "0", step: "1", placeholder: "0", value: rides, onChange: (e) => setRides(e.target.value), isCompact: true, validation: error ? "danger" : void 0 }))), React4.createElement(FieldRow, null, React4.createElement(Field4, null, React4.createElement(Field4.Label, null, "Number of days unused"), React4.createElement(Input4, { type: "number", min: "0", max: FIXED_DAYS_IN_PASS, step: "1", placeholder: "0", value: unusedDays, onChange: (e) => setUnusedDays(e.target.value), isCompact: true, validation: error ? "danger" : void 0 }), error && React4.createElement(Field4.Message, { validation: "danger" }, error))), React4.createElement("div", null, React4.createElement(ResultLabel, null, "Amount to Refund"), React4.createElement(ResultRow, null, React4.createElement(ResultValue, null, refundDisplay !== "" ? refundDisplay : "—"), React4.createElement(Button4, { size: "small", isBasic: true, disabled: refundDisplay === "", onClick: handleCopy }, copied ? React4.createElement(CopiedText, null, "Copied") : "Copy"))));
+      }
+
+      // vfs:components/Calculator5.jsx
+      import React5, { useState as useState5 } from "react";
+      import { Field as Field5, Input as Input5 } from "@zendeskgarden/react-forms";
+      import { Button as Button5 } from "@zendeskgarden/react-buttons";
+      import { Well as Well5 } from "@zendeskgarden/react-notifications";
+      function Calculator5() {
+        const [price, setPrice] = useState5("");
+        const [minuteFee, setMinuteFee] = useState5("");
+        const [discountedMinutes, setDiscountedMinutes] = useState5("");
+        const [unusedDays, setUnusedDays] = useState5("");
+        const [copied, setCopied] = useState5(false);
+        const { result: refund, error } = calcPaygDiscountedRefund(price, minuteFee, discountedMinutes, unusedDays);
+        const refundDisplay = refund !== null ? formatCurrency(refund) : "";
+        function handleCopy() {
+          if (refundDisplay === "") return;
+          navigator.clipboard.writeText(refundDisplay).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), COPY_SUCCESS_TIMEOUT);
+          });
+        }
+        return React5.createElement(Well5, { isRecessed: true }, React5.createElement(SectionTitle, null, CALCULATOR_5_NAME), React5.createElement(FieldRow, null, React5.createElement(Field5, null, React5.createElement(Field5.Label, null, "Price of Voi Pass"), React5.createElement(Input5, { type: "number", min: "0", step: "0.01", placeholder: "0.00", value: price, onChange: (e) => setPrice(e.target.value), isCompact: true }))), React5.createElement(FieldRow, null, React5.createElement(Field5, null, React5.createElement(Field5.Label, null, "Minute fee"), React5.createElement(Input5, { type: "number", min: "0", step: "0.01", placeholder: "0.00", value: minuteFee, onChange: (e) => setMinuteFee(e.target.value), isCompact: true }))), React5.createElement(FieldRow, null, React5.createElement(Field5, null, React5.createElement(Field5.Label, null, "Number of minutes discounted"), React5.createElement(Input5, { type: "number", min: "0", step: "1", placeholder: "0", value: discountedMinutes, onChange: (e) => setDiscountedMinutes(e.target.value), isCompact: true, validation: error ? "danger" : void 0 }))), React5.createElement(FieldRow, null, React5.createElement(Field5, null, React5.createElement(Field5.Label, null, "Number of days unused"), React5.createElement(Input5, { type: "number", min: "0", max: FIXED_DAYS_IN_PASS, step: "1", placeholder: "0", value: unusedDays, onChange: (e) => setUnusedDays(e.target.value), isCompact: true, validation: error ? "danger" : void 0 }), error && React5.createElement(Field5.Message, { validation: "danger" }, error))), React5.createElement("div", null, React5.createElement(ResultLabel, null, "Amount to Refund"), React5.createElement(ResultRow, null, React5.createElement(ResultValue, null, refundDisplay !== "" ? refundDisplay : "—"), React5.createElement(Button5, { size: "small", isBasic: true, disabled: refundDisplay === "", onClick: handleCopy }, copied ? React5.createElement(CopiedText, null, "Copied") : "Copy"))));
+      }
+
+      // vfs:App.jsx
+      var App = () => {
+        return React6.createElement(PageWrapper, null, React6.createElement(Calculator1, null), React6.createElement(Calculator2, null), React6.createElement(Calculator3, null), React6.createElement(Calculator4, null), React6.createElement(Calculator5, null));
+      };
+      var App_default = App;
+
+      // vfs:index.jsx
+      var INITIAL_APP_HEIGHT = "550px";
+      var INITIAL_APP_WIDTH = "100%";
+      var COPY_SUCCESS_TIMEOUT2 = 2e3;
+      var queryParams = new URLSearchParams(location.search);
+      var colorScheme = queryParams.get("colorScheme");
+      var AppWrapper = styled2.div`
+        background-color: ${(p) => getColor2({ theme: p.theme, variable: "background.default" })};
+        min-height: 100vh;
+      `;
+      var ErrorContainer = styled2.div`
+        font-size: 16px;
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        place-content: center;
+        padding: 20px;
+        text-align: center;
+      `;
+      var ErrorTitle = styled2.h4`
+        margin-bottom: 8px;
+        color: #d93f4c;
+      `;
+      var ErrorMessage = styled2.p`
+        margin-bottom: 16px;
+        color: #49545c;
+        max-width: 500px;
+      `;
+      var ErrorPre = styled2.pre`
+        background: #f8f9f9;
+        padding: 16px;
+        border-radius: 4px;
+        max-width: 600px;
+        overflow: auto;
+        text-align: left;
+        white-space: pre-wrap;
+      `;
+      var CopyButton = styled2.button`
+        margin-top: 16px;
+        padding: 8px 16px;
+        border: 1px solid #c1c3c5;
+        border-radius: 4px;
+        background: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        &:hover {
+          background: #f8f9f9;
+          border-color: #68737d;
+        }
+      `;
+      var CopiedText2 = styled2.span`
+        color: #1f73b7;
+      `;
+      var IconText = styled2.span`
+        font-size: 14px;
+      `;
+      var ErrorBoundary = class extends React7.Component {
+        constructor(props) {
+          super(props);
+          __publicField(this, "copyErrorToClipboard", () => {
+            var _a;
+            const errorText = ((_a = this.state.error) == null ? void 0 : _a.toString()) || "Unknown error";
+            navigator.clipboard.writeText(errorText);
+            this.setState({ copied: true });
+            setTimeout(() => {
+              this.setState({ copied: false });
+            }, COPY_SUCCESS_TIMEOUT2);
+          });
+          this.state = {
+            hasError: false,
+            error: null,
+            copied: false
+          };
+        }
+        static getDerivedStateFromError(error) {
+          return { hasError: true, error };
+        }
+        componentDidCatch(error, errorInfo) {
+          window.parent.postMessage({
+            type: "iframe-error",
+            error: error.toString(),
+            errorInfo: JSON.stringify(errorInfo)
+          }, "*");
+        }
+        render() {
+          var _a;
+          if (this.state.hasError) {
+            return React7.createElement(ErrorContainer, null, React7.createElement("div", null, React7.createElement(ErrorTitle, null, "An error occurred in your application"), React7.createElement(ErrorMessage, null, "To resolve this issue, please copy the error message below and paste it back into the app builder. App Builder will automatically attempt to fix this issue."), React7.createElement(ErrorPre, null, (_a = this.state.error) == null ? void 0 : _a.toString()), React7.createElement(
+              CopyButton,
+              {
+                onClick: this.copyErrorToClipboard,
+                title: "Click to copy error message"
+              },
+              this.state.copied ? React7.createElement(React7.Fragment, null, React7.createElement(CopiedText2, null, "Copied!"), React7.createElement(IconText, null, "✓")) : React7.createElement(React7.Fragment, null, "Copy Error", React7.createElement(IconText, null, "📋"))
+            )));
+          }
+          return this.props.children;
+        }
+      };
+      var Entry = () => {
+        const [base, setBase] = useState6(colorScheme || "light");
+        useEffect(() => {
+          window.zafClient.invoke("resize", { height: INITIAL_APP_HEIGHT, width: INITIAL_APP_WIDTH });
+          const client = window.zafClient;
+          client.on("colorScheme.changed", (colorScheme2) => setBase(colorScheme2));
+        }, []);
+        const themeObject = __spreadProps(__spreadValues({}, DEFAULT_THEME), {
+          colors: __spreadProps(__spreadValues({}, DEFAULT_THEME.colors), { base })
+        });
+        return React7.createElement(ErrorBoundary, null, React7.createElement(ThemeProvider, { theme: themeObject }, React7.createElement(AppWrapper, null, React7.createElement(App_default, null))));
+      };
+      try {
+        createRoot(document.getElementById("root")).render(React7.createElement(Entry, null));
+      } catch (error) {
+        console.log({ error });
+        window.parent.postMessage({
+          type: "iframe-error",
+          error: error.toString()
+        }, "*");
+      }
+      var index_default = Entry;
+      export {
+        index_default as default
+      };
+    </script>
+  
+
+</body></html>

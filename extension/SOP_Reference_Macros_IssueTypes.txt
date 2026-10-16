@@ -1,0 +1,1062 @@
+====================================================================================================
+SOP REFERENCE - NAME / PAGE LINK / ISSUE TYPES / MACROS
+Generated: 2026-09-24
+Purpose: Gemini Sidepanel Zendesk Ticket Resolution Reference
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+SOP: Accident and Legal tickets
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614493015453
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  • LiveChat::AccidentForward
+  • Legal::Accidents::ChatToEmail
+  • Legal::Escalation::Accident
+  • Legal::Escalation::Claims
+  • Legal::Escalation::Police
+  • PhoneSupport::AccidentAdminNote
+
+----------------------------------------------------------------------------------------------------
+SOP: Account changes and deletion
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614629132317
+
+ISSUE TYPES:
+Account::Account Settings::Edit Profile
+Account::Account Settings::Delete Account
+Account::Account Settings::Unsubscribe from newsletter
+
+MACROS:
+Account::Edit::Email
+Account::Delete::CreditsTrasfer(UserDeletedAccount)
+Account::Delete::CreditsTransfer(VoiDeletedAccount)
+Account::Delete::CreditsTransferConfirmation
+Account::Edit::PhoneNumber
+Account::Edit::NewPhoneNumber
+Account::Delete::AccidentNoDeletion
+Account::Delete::General
+Account::Delete::Confirmation
+Account::Delete::90Days
+Account::Edit::Unsubscribe
+Account::Edit::NoCSATsurvey
+
+----------------------------------------------------------------------------------------------------
+SOP: Account creation and login issues
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614601312925
+
+ISSUE TYPES:
+Account::Account Issues::Can’t Login
+Account::Account Issues::SMS Verification
+
+MACROS:
+Account::Login::DidNotReceiveSMS
+Account::Login::Blocked::MultipleAccounts
+Account::Login::Blocked::PreviousAccounts
+Account::Login::LoginTips
+Account::Login::LoginIssues
+
+----------------------------------------------------------------------------------------------------
+SOP: Activity score
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/17846311637277
+
+ISSUE TYPES:
+Discounts & Promotions::Credits::Activity Score
+
+MACROS:
+  • Discounts::Credits::ActivityScore
+  • Discounts::Credits::ActivityScoreChangeSnippet
+  • Discounts::Credits::ActivityScoreIncident
+  • Discounts::Credits::FastTrackException
+  • Discounts::Credits::NoFastTrack
+
+----------------------------------------------------------------------------------------------------
+SOP: Belgium Prio Queue - requests from councils (only for agents trained on this task)
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614188369181
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Blocked accounts
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614162839837
+
+ISSUE TYPES:
+  • User non-compliance ::Blocked accounts ::Risk engine
+  • User non-compliance ::Blocked accounts ::Blocked by employee outside CXO
+  • User non-compliance ::Blocked accounts ::Members of the public
+  • User non-compliance ::Blocked accounts ::Ambassadors report
+  • User non-compliance ::Blocked accounts ::Outside ops
+  • User non-compliance ::Blocked accounts ::Police report
+  • User non-compliance ::Blocked accounts ::Sharing prevention
+  • User non-compliance ::Blocked accounts ::Too many payment methods
+  • User non-compliance ::Blocked accounts ::Payment method shared
+  • User non-compliance ::Blocked accounts ::Hard decline
+  • User non-compliance ::Blocked accounts ::Device blocked previously by CXO
+
+MACROS:
+  • UserNonCompliance::Blocked::RiskEngine-StrongNo
+  • UserNonCompliance::Account::Blocked::RiskEngine-SoftNo
+  • UserNonCompliance::Blocked::MultipleDeviceBlock
+  • UserNonCompliance::Blocked::RiskEngine-Unblock
+  • UserNonCompliance::Blocked::PaymentUnblock
+  • UserNonCompliance::Blocked::Police
+  • UserNonCompliance::Blocked::Pushback
+  • UserNonCompliance::Blocked::OutsideZone-Unblock
+  • UserNonCompliance::Blocked::OutsideZone-Block
+  • UserNonCompliance::Blocked::SharingPrevention
+  • Payment::PaymentMethodBlocked
+  • UserNonCompliance::ChatbotRides::WarningPushback
+  • UserNonCompliance::ChatbotRides::TempBlockedPushback
+  • UserNonCompliance::Blocked::PaymentMethodHardDecline
+  • UserNonCompliance::Blocked::PaymentMethodFraud
+  • UserNonCompliance::Blocked::PaymentShared
+  • UserNonCompliance::Blocked::750Fraud
+  • UserNonCompliance::Blocked::GermanySuspectedFraud
+  • UserNonCompliance::Blocked::DevicePreviouslyBlockedbyCXO::Pushback
+  • UserNonCompliance::Blocked::DevicePreviouslyBlockedbyCXO::Disengage
+
+----------------------------------------------------------------------------------------------------
+SOP: Booking – reserve before riding
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614303804701
+
+ISSUE TYPES:
+Riding::Before Ride::Reserve vehicle
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Broken vehicle
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614311804445
+
+ISSUE TYPES:
+All issue types under the categories Hardware::Broken Vehicle
+Riding::During ride::Shut down due to no riding zone
+Riding::During ride::Shut down due to battery dying
+Riding::During ride::Slowed down due to slow zone
+
+MACROS:
+  • Hardware::VehicleIssue::Feedback::SlowVehicle
+  • Operations::Feedback::SlowZone::E-bike
+  • Hardware::VehicleIssue::ShutDownDuringRide::NoRidingZone
+  • Hardware::VehicleIssue::ShutDownDuringRide::Battery
+  • Parking:: EndRide::Compensation
+  • Hardware::ScooterIssue::CompensationCredits
+  • Hardware::ScooterIssue::CompensationCredits2
+  • Hardware::ScooterIssue::Refund::Card
+  • Hardware::ScooterIssue::Refund::Car2
+  • Hardware::ScooterIssue::Refund::PaybyMobile
+  • Hardware: :ScooterIssue::Refund::Klarna
+  • Hardware::ScooterIssue::Refund::PayPal
+  • Hardware::ScooterIssue::0Charge
+  • Hardware::ScooterIssue::NoCompensation
+  • Hardware::ScooterIssue::Feedback::Unclear
+  • Parking::EndRide::Feedback- Compensation
+  • Parking::EndRide::E-bike::DiedinNPZ
+
+----------------------------------------------------------------------------------------------------
+SOP: Bug Reporting Process - reporting for team leads
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614648316829
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  • Account::AppIssue::Tips
+  • Account::AppIssue::KnownIssue
+  • Account::AppIssue::NoSolution
+
+----------------------------------------------------------------------------------------------------
+SOP: Collaboration Requests
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614539225373
+
+ISSUE TYPES:
+Collaborations::Offers and projects::Collaboration offers
+Collaborations::Offers and projects::Student projects
+Media::Press Inquiry::Questions from journalists/press
+
+MACROS:
+  • Collaborations::Offers::Valid
+  • Collaborations::Offers::Invalid
+  • Collaborations::Offers::MoreInfo
+  • Collaborations::Offers::Career
+  • Collaborations::Offers::Expansion
+  • Collaborations::Offers::StudentProjects
+  • Fleet specialist::Inquiry
+  • Fleet specialist::Invalid request
+
+----------------------------------------------------------------------------------------------------
+SOP: Communication Excellence
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614690691997
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  • PhoneSupport::OutboundCallRequest::FirstMessage
+  • PhoneSupport::OutboundCallRequest:::SecondMessage
+  • PhoneSupport::OutboundCallRequest::ThirdMessage
+  • Hardware::ScooterIssue::Feedback::Unclear
+  • General::On-Hold
+  • General::Escalated
+  • General::LanguageNotSupported
+
+----------------------------------------------------------------------------------------------------
+SOP: Compensation Rules
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614695724317
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  • Credits: General::Compensation::Credits
+  • Discount voucher:  General::Compensation::Voucher
+  • Refund : General::Compensation::Refund
+
+----------------------------------------------------------------------------------------------------
+SOP: Consumer complaint form - Spain
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614513824413
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  • Feedback::SpainConsumerComplaintEN
+  • Feedback::SpainConsumerComplaintES
+
+----------------------------------------------------------------------------------------------------
+SOP: Credits Misuse
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614169791645
+
+ISSUE TYPES:
+Discounts & Promotions::Credits::Credits Removal
+User non-compliance::Fraudulent behaviour::Credits misuse
+
+MACROS:
+Discounts::Credit Removal::Vouchers Multiple Accounts
+Discounts::Credit Removal::Wrong Removal
+Discounts::Credit Removal::Credits Expired
+Discounts::Credit Removal::Referral Credits Misuse
+
+----------------------------------------------------------------------------------------------------
+SOP: Daily Process Updates
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/17467062063389
+
+ISSUE TYPES:
+CONCERNS ANY SOP
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Duplicate Transaction
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614356946845
+
+ISSUE TYPES:
+Payments::Duplicate charge
+
+MACROS:
+Payments::DuplicateTransaction::Explanation
+
+----------------------------------------------------------------------------------------------------
+SOP: E-bike locks in Barcelona
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/25241069151645
+
+ISSUE TYPES:
+  • Riding::Before ride::Bike Locks
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Email workflows
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/24924885339805
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+General::On-Hold
+General::EmailSupport::AdminNotes
+General::AbusiveLanguage
+
+----------------------------------------------------------------------------------------------------
+SOP: End-ride issues
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614409721245
+
+ISSUE TYPES:
+Parking::Parking issues::Inside MPZ
+Parking::Parking issues::Inside NPZ / Outside MPZ
+Parking::Parking issues::Inside PZ (free-float) - Close to NPZ
+Parking::Parking issues::Inside PZ (free-float) - Not Close to NPZ
+Parking::Parking issues::Outside Operational Zone
+Parking::Parking issues::Max Capacity
+Parking::Parking issues::Guest not with host
+Parking::End ride issues::Phone died
+Parking::End ride issues::Forgot to end
+Parking::End ride issues::Stolen vehicle
+User non-compliance::Fraudulent behaviour::Fake end-ride reports
+
+MACROS:
+Parking::EndRide::Compensation
+Parking::EndRide::Confirmation
+Parking::EndRide::Confirmation2
+
+----------------------------------------------------------------------------------------------------
+SOP: Escalation guidelines
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/20607422398877
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Failed Payments
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614374008605
+
+ISSUE TYPES:
+Payments::Debt::Insufficient funds
+Payments::Debt::Bank rejected transaction
+Payments::Debt::Card expired
+Payments::Debt::Other
+Payments::SCA (Strong Customer Authentication)
+Payments::Authorisation Hold
+
+MACROS:
+  • Payment::DebtRecovery
+  • Payments::DebtInRelatedAccount
+  • Payments::HowtoPayaFailedPayment
+  • Payments::Refund::FailedPayment
+  • Payments::Debtist
+  • LiveChat::ContactBank
+  • Payment::SCA
+  • Payment::SCA-MonthlyPass
+  • Payment::Bancontact-RideCostOver7.50
+
+----------------------------------------------------------------------------------------------------
+SOP: General Feedback for Various topics
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614528037149
+
+ISSUE TYPES:
+Feedback::Operations Feedback::Negative feedback (no details)
+Feedback::Operations Feedback::Positive feedback (no details)
+Feedback::Operations Feedback::Price
+Feedback::Operations Feedback::Availability (hard to find vehicles)
+Feedback::App feedback::Missing
+Feedback::Operations Feedback::Sustainability
+User non-compliance::Fraudulent Behavior::Someone is selling a Voi
+
+MACROS:
+  • Feedback::Other::GeneralPositive
+  • Feedback::Other::GeneralNegative
+  • Feedback::Other::SomeoneStealingScooter(FS)
+  • Operations::Feedback::MissingScooter
+  • Operations::Feedback::Recycling
+  • Operations::Feedback::VehicleAvailability
+  • Payments::PriceLong
+
+----------------------------------------------------------------------------------------------------
+SOP: Group Rides General Info
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/17961560290973
+
+ISSUE TYPES:
+Service enquiries::Features::Group Ride
+
+MACROS:
+Ride::GroupRides::GeneralInfo
+Ride::Group Rides::Guest Ride Charge
+
+----------------------------------------------------------------------------------------------------
+SOP: Handling complaints
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/38143409672221
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  • Complaint::EscalationNote
+  • Complaint::LeadResponse
+
+----------------------------------------------------------------------------------------------------
+SOP: Helmet lock scooters
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614334539165
+
+ISSUE TYPES:
+  • Hardware::Broken Vehicle::Helmet Broken
+  • Hardware::Broken Vehicle::Missing Helmet
+  • Parking::End Ride Issues::Helmet not attaching
+
+MACROS:
+  • Ride::Helmet::LockGeneralInfo
+  • Hardware::HelmetLock::IssueMoreInfo
+  • Hardware::HelmetLock::NoRefund
+  • Helmet Lock::Refund
+  • Hardware::ScooterIssue::NoCompensation
+  • Ride::Helmet::DenmarkRegulations
+
+----------------------------------------------------------------------------------------------------
+SOP: Helmet Selfies
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/20778636674205
+
+ISSUE TYPES:
+Riding::Before ride::Helmet Selfie Issues
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: How to handle GDPR requests
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614530107933
+
+ISSUE TYPES:
+  • Legal::GDPR::Right to be forgotten
+  • Legal::GDPR::Right to access
+
+MACROS:
+  • GDPR::SendAllData
+  • GDPR::SendAllData (Deleted Account)
+  • GDPR::DeleteAllData
+  • GDPR::GeneralInfo
+  • GDPR::PrivacyPolicyUpdated
+  • GDPR::WippleNoEmail
+  • GDPR::WippleAnswer
+
+----------------------------------------------------------------------------------------------------
+SOP: How to use Braintree, Stripe & Primer
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/36252048473245
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: ID Verification (UK, France, Belgium, Norway, Italy & Austria)
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614631035293
+
+ISSUE TYPES:
+Account::Account Issues::ID Verification::International Drivers License
+Account::Account Issues::ID Verification:: Paper License
+Account::Account Issues::ID Verification::License connected to another account
+Account::Account Issues::ID Verification::Photo quality
+Account::Account Issues::ID Verification::User Error
+
+MACROS:
+  • Account::DrivingLicense::ConnectedtoAnotherAccount
+  • Account::DrivingLicense::TypesofLicenses
+  • Account::DrivingLicense::OldType
+  • Account::IDVerification::SelfieRejected
+  • Account::DrivingLicense::DifferentIDUploaded
+  • Account::IDVerification::IDRejected
+  • Account::IDVerification::IDNotSupported
+  • Account::IDVerification::IDPhotoRequired
+  • Account::DrivingLicense::Approved
+  • Account::DrivingLicense::UKLicense
+  • Account::IDVerification::Oslo
+  • Account::IDVerification::StolenID
+  • Account::IDVerification::ExpiredPlatform
+
+----------------------------------------------------------------------------------------------------
+SOP: Identity Verification for support requests
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614653451037
+
+ISSUE TYPES:
+Account::Account verification::Verification failed
+
+MACROS:
+  • Account::IDVerification::WrongEmail
+  • Account::IDVerification::WrongEmail::Failed
+  • Account::IDVerification::GuestRider
+
+----------------------------------------------------------------------------------------------------
+SOP: In-App Navigation
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614327578909
+
+ISSUE TYPES:
+Riding::During ride::In-App Navigation
+
+MACROS:
+  • In-AppNavigation::UnclearFeedback
+  • In-AppNavigation::ClearFeedback
+  • In-AppNavigation::HowtoUse
+
+----------------------------------------------------------------------------------------------------
+SOP: Items left on vehicle
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614315507997
+
+ISSUE TYPES:
+Service inquiries::Lost items::Items left on vehicle
+
+MACROS:
+  • Ride::ItemsLeftOnScooters-NoRides
+  • Ride::Items Left on Scooters - Scooter had rides
+  • Ride::Items Left on Scooters - Report to Police
+  • Ride::Items Left on Scooters - Item reported
+
+----------------------------------------------------------------------------------------------------
+SOP: Livechat workflows
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/24979153932957
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+LiveChat::Hey
+LiveChat::Connected
+LiveChat::CheckingInfo
+LiveChat::AgreedResolution
+LiveChat::DifferentResolution
+LiveChat::NoResolution
+LiveChat::Idle-EndChat
+General::AbusiveLanguage
+General::AbusiveLanguage::AccountTemporarilySuspended
+
+----------------------------------------------------------------------------------------------------
+SOP: Non-Parking Zone, Parking Spot, and other Zone requests
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614472159005
+
+ISSUE TYPES:
+  • Operational Requests::Zones::Add a node or parking spot
+  • Operational Requests::Zones::Remove a node or parking spot
+  • Operational Requests::Zones::Add a no parking zone
+
+MACROS:
+  • Operations::LocalOps::MoreInfoNeeded
+  • Operations::LocalOps::RequestRejected
+  • Operations::LocalOps::AddNode
+  • Operations::LocalOps::AddNode::FR
+  • Operations::LocalOps::Add/RemoveNode/NPZTemplate
+  • Operations::LocalOps::AddNPZ/RemovePS-Maybe
+  • Operations::LocalOps::AddNPZ/RemovePS-Pushbacks-Maybe
+  • Operations::LocalOps::SendLink
+
+----------------------------------------------------------------------------------------------------
+SOP: Outages Process - Reporting for Team leads
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614637423645
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Parents_guardians reporting their underage kids using Voi
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614227089309
+
+ISSUE TYPES:
+User non-compliance::ASB report from others::Parent/Underage kids
+
+MACROS:
+  • UserNonCompliance::ASB::AllegedMinor::EmailtoMinor
+  • UserNonCompliance::ASB::AllegedMinor::EmailtoParent
+  • UserNonCompliance::ASB::AllegedMinor::NotBlocked
+  • UserNonCompliance::ASB::AllegedMinor::MinorBlocked
+  • UserNonCompliance::ASB::AllegedMinor::OwnEmail
+  • UserNonCompliance::ASB::AllegedMinor::RefundDenied
+
+----------------------------------------------------------------------------------------------------
+SOP: Parking Assistant Labelling
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614444689437
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Parking Assistant Pushbacks
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614443719453
+
+ISSUE TYPES:
+All issue types under PA Compliance
+
+MACROS:
+  • Parking::ParkingAssistant::Pushback::BadPhoto
+  • Parking::ParkingAssistant::Pushback::Can'tSubmitParkingPhoto
+  • Parking::ParkingAssistant::Pushback::BadParking::IncorrectlyAssessed
+  • Parking::ParkingAssistant::Pushback::BadPhoto::IncorrectlyAssessed
+  • Parking::ParkingAssistant::Pushback::BadParking::Warning::FreeFloating&Soft
+  • Parking::ParkingAssistant::Pushback::BadParking::Fine::FreeFloating&SoftMPZ
+  • Parking::ParkingAssistant::Pushback::BadParking::Warning::MPZ
+  • Parking::ParkingAssistant::Pushback::BadParking::Fine::MPZ
+  • Parking::ParkingAssistant::Pushback::Abandoned
+  • Parking::ParkingAssistant::Fine::Milan
+  • Parking::ParkingAssistant::Pushback::FineNotProcessed
+  • Parking::ParkingAssistant::Pushback::MachineLearning
+  • Parking::ParkingAssistant::Fine::Refund
+  • Parking::ParkingAssistant::Fine::NoRefundParkingFine
+  • Parking::ParkingAssistant::Fine::NoRefundPhotoFine
+  • Parking::ParkingAssistant::Fine::CityFines
+
+----------------------------------------------------------------------------------------------------
+SOP: Parking Decision Rectification
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/33365827589277
+
+ISSUE TYPES:
+PA Compliance::Parking Decision::Rectified
+PA Compliance::Parking Decision::Denied
+
+MACROS:
+  • Parking::ParkingAssistant::DecisionRectified
+  • Discounts::Credits::ActivityScoreDenied
+
+----------------------------------------------------------------------------------------------------
+SOP: Partner Support
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614526377117
+
+ISSUE TYPES:
+The same issue types as for other regular issues for all partners except for Novalnet
+Collaborations::Offers and Projects::Novalnet Invoice requests
+
+MACROS:
+  • Collaborations::Partners::ForwardingForRefund
+  • Collaborations::Partners::Ruter::EndRide
+  • Collaborations::Partners::Ruter::RedirectQuestion
+  • Collaborations::Partners::Novalnet::Invoice
+  • Collaborations::Partners::Novalnet::NoAccountFoundour partners are
+
+----------------------------------------------------------------------------------------------------
+SOP: Password standards at Voi
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614640493981
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Pavement_tandem riding detection (Marseille only)
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/35619565103261
+
+ISSUE TYPES:
+User non-compliance::ASB::Marseille::Tandem/Pavement riding
+
+MACROS:
+  • UserNonCompliance::ASB::Marseille::TandemRiding::Warning
+  • UserNonCompliance::ASB::Marseille::TandemRiding::Fine
+  • UserNonCompliance::ASB::Marseille::PavementRiding::Warning
+  • UserNonCompliance::ASB::Marseille::PavementRiding::Fine
+
+----------------------------------------------------------------------------------------------------
+SOP: Payment method validation (auth hold + prelim charge)
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614410806045
+
+ISSUE TYPES:
+  • Payments::Preliminary Charge
+  • Payments::Authorisation Hold
+
+MACROS:
+  • LiveChat::AuthorisationHoldExplanation
+  • Payments::AuthorisationHold::Explanation
+  • Payments::AuthorisationHold::AuthorizationTesting
+  • Payments::AuthorisationHold::StripeReceipt
+  • Payments::AuthorisationHold::Pushback
+  • Payments::PreliminaryCharge
+  • Payments::AuthorisationHold::BancontactExplanation
+
+----------------------------------------------------------------------------------------------------
+SOP: Phone workflows
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/25132538412317
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+PhoneSupport::AccidentAdminNote
+PhoneSupport::DeadAir
+PhoneSupport::EscalationTemplate
+PhoneSupport::AdminNote
+PhoneSupport::AbusiveLanguage
+PhoneSupport::AbusiveLanguage::PhoneTemporarilyBlocked
+
+----------------------------------------------------------------------------------------------------
+SOP: Price testing & Smart Pricing
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614361354269
+
+ISSUE TYPES:
+  • Feedback::Operations feedback::Price
+
+MACROS:
+  • Payments::PriceTesting
+  • Payments::PriceLong
+
+----------------------------------------------------------------------------------------------------
+SOP: Pricing Editor
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/21058194183709
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Refund issues
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614427777437
+
+ISSUE TYPES:
+Payments::Didn't receive a refund
+
+MACROS:
+  • Payments::Refund::PayPalDispute
+  • Payments::Refund::PayPalRefundedTimeLimitExceeded
+  • Payments::AlreadyRefunded
+
+----------------------------------------------------------------------------------------------------
+SOP: Reports of Anti-social Behaviour
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614174314653
+
+ISSUE TYPES:
+User non-compliance::ASB reports from others::Dangerous riding
+User non-compliance::ASB reports from others::Drunk riding
+User non-compliance::ASB reports from others::Not following traffic rules
+User non-compliance::ASB reports from others::Pavement riding
+User non-compliance::ASB reports from others::Twin riding
+User non-compliance::ASB reports from others::Underage riding
+User non-compliance::ASB reports from others::Helmets
+
+MACROS:
+UserNonCompliance::ASB::GeneralReport(NotforUK)
+
+----------------------------------------------------------------------------------------------------
+SOP: Reports_threats about potential vulnerability of the app_service
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614523368477
+
+ISSUE TYPES:
+Collaborations::Security::Vulnerability Report
+
+MACROS:
+Collaborations::Security::VulnerabilityReport
+
+----------------------------------------------------------------------------------------------------
+SOP: Request for Receipts
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614391857437
+
+ISSUE TYPES:
+Payments::Receipts
+
+MACROS:
+  • Payments::Receipt
+
+----------------------------------------------------------------------------------------------------
+SOP: Ride Inspector
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614670498205
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Ride Mode for E-Scooters (and E-bikes in France)
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/34408312699165
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Rider Rebalance Discount
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614594447005
+
+ISSUE TYPES:
+  • Discounts & Promotions::Discounts::Rider rebalance
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Riders and Vehicle sections
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/28389385974045
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Safety Centre (only for Paris)
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/30531800450973
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Someone is selling a Voi
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614152705949
+
+ISSUE TYPES:
+User non-compliance::Fraudulent behaviour::Someone is selling a Voi
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Starting a ride from an NRZ (Escape from NRZ)
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/24647880746141
+
+ISSUE TYPES:
+Riding::Before ride::Escape from NRZ
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Starting-ride issues
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/26869232013213
+
+ISSUE TYPES:
+Riding::Before ride::Unlock error
+
+MACROS:
+  • Livechat::VehicleBooked
+  • Livechat::VehicleinNRZ
+
+----------------------------------------------------------------------------------------------------
+SOP: Stolen Email
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614147674525
+
+ISSUE TYPES:
+User Non-Compliance::Fraudulent Behaviour::Stolen account/ payment method
+
+MACROS:
+  • UserNonCompliance::Stolen Email::Clarification
+  • UserNonCompliance::Stolen Email::Explanation
+
+----------------------------------------------------------------------------------------------------
+SOP: Stolen Payment Method
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614160916509
+
+ISSUE TYPES:
+User Non-Compliance::Fraudulent Behavior::Stolen Account/Payment Method
+
+MACROS:
+  • UserNonCompliance::StolenPaymentMethod::Information
+  • UserNonCompliance::StolenPaymentMethod::AccountFound
+  • UserNonCompliance::StolenPaymentMethod::RelatedAccount
+
+----------------------------------------------------------------------------------------------------
+SOP: Subscriptions & Minute Bundles
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614347899293
+
+ISSUE TYPES:
+Subscriptions::Canceling::Voi Pass Auto-renewal
+Subscriptions::Canceling::Accidental purchase
+Subscriptions::Canceling::Winter
+Subscriptions::Canceling::Accidental Cancelation
+Subscriptions::General questions::Voi Pass
+Subscriptions::General questions::Voi pass validity in different cities
+Subscriptions::Using::
+Voi Pass minutes consumed
+Subscriptions::Purchasing::
+Can't buy Voi pass
+Subscriptions::Purchasing::
+Voi Pass not activating on account
+Subscriptions::Using::
+Charged for rides with Voi Pass
+Subscriptions::Canceling::
+Voi Pass DL Issues /No DL
+User non-compliance::Blocked accounts::Voi pass abuse
+
+MACROS:
+Subscription::VoiPass::FreeUnlockPass::GeneralInfo
+Subscription::VoiPass::PeriodPass::GeneralInfo
+Subscription::VoiPass::RefundDeclined 14Days
+Subscription::VoiPass::RefundDeclinedOther
+Subscription::VoiPass::RefundDeclinedDaily
+Subscription::VoiPass::RefundDeclinedBundles
+Subscription::VoiPass::OldSubscriptionCancellationRefund
+Subscription::VoiPass::OldSubscriptionCancellationNoRefund
+Subscription::VoiPass::NoSubscriptionsExplanation
+Subscription::VoiPass::Refund-UserHadRides
+Subscription::VoiPass::OwnCancellation
+Subscription::VoiPass::WinterRefunded
+Subscription::VoiPass::Winter::GeneralInfo
+Subscription::VoiPass::Reservation
+Subscription::VoiPass::OutofPassZone
+Subscription::VoiPass::AbuseWarning
+Subscription::VoiPass: :Can'tPurchase
+Subscription::VoiPass::DiscountedMinutes
+Subscription::VoiPass::FixedRide
+Subscriptions::VoiPass: :NotAvailableInApp
+General::On-Hold
+General Info::UK License
+
+----------------------------------------------------------------------------------------------------
+SOP: Types of parking modes
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614438377245
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+Parking::GeneralInfo::ParkingModes
+
+----------------------------------------------------------------------------------------------------
+SOP: Useful Links and POCs
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614669087645
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: User charged for amount they don't recognise
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614386533917
+
+ISSUE TYPES:
+Payments::Charge Clarification
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: User-level discounts
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614558767005
+
+ISSUE TYPES:
+Discounts & Promotions::Vouchers / Promo codes::StudentBeans
+Discounts & Promotions::Vouchers / Promo codes::Event/Webinar
+Discounts & Promotions::Vouchers / Promo codes::Promotion campaign
+Discounts & Promotions::Credits::Referral
+Discounts & Promotions::Credits::Great parking spot
+Media::RideSafeAcademy::RideSafe academy - issues/questions
+
+MACROS:
+  • Discounts::Credits::GeneralInfo
+  • Discounts::Voucher::Tips
+  • Discounts::Voucher::MecenatVoucher
+  • Discounts::Credits::Referral
+  • Discounts::Credits::ReferralError
+  • Discounts::Credits::Didn'tReceiveDiscount/Reward
+  • Discounts::Credits::ReferralPushback
+  • Discounts::Credits::ReferralBlocked-Pushback
+  • Discounts::Voucher::HowtoActivate
+  • Discounts::Voucher::Disabled
+
+----------------------------------------------------------------------------------------------------
+SOP: Vehicle Models
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614617975581
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  • Parking::EndRide::E-bike::DiedinNPZ
+  • Operations::Feedback::SlowZone::E-bike
+  • Operations::Vehicles::E-bike::HowtoAdjustSaddle
+  • Hardware::E-bike1::OutOfService
+
+----------------------------------------------------------------------------------------------------
+SOP: Voi 4 Discounts
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614604846237
+
+ISSUE TYPES:
+  • Discounts & Promotions::Voi4Discounts::General questions
+  • Discounts & Promotions::Voi4Discounts::Issues
+  • Discounts & Promotions::Voi4Discounts::Applications
+  • Discounts & Promotions::Voi4Discounts::KSF
+  • Discounts & Promotions::Voi4Discounts::HounslowCouncil
+
+MACROS:
+  • Discounts::Voi4D::ConfirmationVoiPass
+  • Discounts::Voi4D::ConfirmationStandardRide
+  • Discounts::Voi4D::FreeRidesConfirmation
+  • Discounts::Voi4D::ChangeToMinutes.
+  • Discounts::Voi4D::Voi4Aarhus
+  • Discounts::Voi4D::Voi4Youth-Spain
+  • Discounts::Voi4D::Voi4Heroes-Ineligible
+  • Discounts::Voi4D::Voi4Heroes-Reduction
+  • Discounts::Voi4D::Voi4Students-Ineligible
+  • Discounts::Voi4D::Voi4Students-Germany
+  • Discounts::Voi4D::NameNotMatching
+  • Discounts::Voi4D::DocumentNotApproved
+  • Discounts::Voi4D::DocumentNotValid
+  • Discounts::Voi4D::NoDocument
+
+----------------------------------------------------------------------------------------------------
+SOP: Voi Agent
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/34551476310941
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Voi Business
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614218843421
+
+ISSUE TYPES:
+Side Projects::Voi4Business::Voi4Business - issues/questions
+
+MACROS:
+  • SideProject::V4B::Voi for Business
+  • SideProject::V4B::Forward
+
+----------------------------------------------------------------------------------------------------
+SOP: Voi Employee Support
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614656559517
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Voi payment methods
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614325631901
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  • Payments::PaymentMethods
+  • Payments::PriceRoundedUp
+  • Payments::PriceLong
+
+----------------------------------------------------------------------------------------------------
+SOP: Ways of Working
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614681810717
+
+ISSUE TYPES:
+  N/A
+
+MACROS:
+  N/A
+
+----------------------------------------------------------------------------------------------------
+SOP: Wrongly parked vehicles (urgent + non-urgent processes)
+PAGE LINK: https://voitechnology.zendesk.com/hc/en-gb/articles/16614486915229
+
+ISSUE TYPES:
+  • Operational Requests::Vehicles::Wrongly Parked Scooters
+
+MACROS:
+  • Operations::Vehicles::Pick-upVehicle::InfoNeeded
+  • Operations::Vehicles::Pick-upVehicle::Confirmation
+  • Operations::Vehicles::WrongPark
+  • Operations::Vehicles::WrongPark(Disabilities)
+  • Operations::Vehicles::PickupScooter:RangersGothenburg

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!-- saved from url=(0220)https://1062203.apps.zdusercontent.com/1062203/assets/1742834242-02e9ba9853011752c365a09be999de3d/iframe.html?origin=https%3A%2F%2Fvoitechnology.zendesk.com&app_guid=caf5d89c-254c-427a-ba8c-0103756d237f&colorScheme=light -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <style>
+    html, body {
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    .pdf-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    .pdf-table th, .pdf-table td {
+      color: #2f3941;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+    .pdf-table th {
+      text-align: left;
+      padding: 8px;
+      font-weight: 600;
+    }
+    .pdf-table td {
+      padding: 8px;
+      vertical-align: middle;
+    }
+    .filename-cell {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 120px;
+      width: 50%;
+    }
+    .size-cell {
+      width: 20%;
+      min-width: 60px;
+      white-space: nowrap;
+    }
+    .actions-cell {
+      width: 30%;
+      min-width: 90px;
+      white-space: nowrap;
+    }
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;  /* Slightly increased gap */
+      flex-wrap: nowrap;
+    }
+    .icon-button {
+      background: white;
+      border: 1px solid #1f73b7;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 4px;
+      margin: 0 2px;
+      position: relative;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;  /* Smooth transition for hover/active states */
+    }
+    .icon-button:hover {
+      background-color: #1f73b7;
+    }
+    .icon-button:active {
+      background-color: #144a75;  /* Darker blue for click state */
+      border-color: #144a75;
+    }
+    /* Make the icon white on hover and active states */
+    .icon-button:hover img,
+    .icon-button:active img {
+      filter: brightness(0) invert(1);  /* Convert icon to white */
+    }
+    .icon-button img {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+    #tableContainer {
+      width: 100%;
+      max-height: 100%;
+    }
+    /* Tooltip styles */
+    [aria-label] {
+      position: relative;
+    }
+
+    [aria-label]:hover::after {
+      content: attr(aria-label);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 4px 8px;
+      background-color: #1f73b7;
+      color: white;
+      font-size: 12px;
+      white-space: nowrap;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+
+    /* Special handling for the middle and last buttons' tooltips */
+    .button-container .icon-button:nth-last-child(-n+2)[aria-label]:hover::after {
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+
+    /* Update the responsive styles */
+    @media (max-width: 350px) {
+      .filename-cell {
+        width: 70%;  /* Give more space to filename */
+        min-width: 100px;
+      }
+      
+      .size-cell {
+        width: 30%;  /* Reduce size column */
+        min-width: 50px;
+      }
+      
+      .actions-cell {
+        width: 100%;  /* Full width for actions */
+        padding: 4px 8px;  /* Add some padding */
+      }
+      
+      /* Center buttons on one line below */
+      .button-container {
+        flex-direction: row;
+        justify-content: center;  /* Center the buttons */
+        gap: 12px;  /* Keep the gap between buttons */
+        padding: 4px 0;
+      }
+      
+      /* Hide the Actions header when buttons are moved below */
+      th.actions-cell {
+        display: none;
+      }
+      
+      /* Layout for narrow view */
+      tr {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        position: relative;  /* For absolute positioning of border */
+      }
+      
+      /* Remove all cell borders */
+      .pdf-table td, .pdf-table th {
+        border-bottom: none;
+      }
+      
+      /* Add single border under each row */
+      tr::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #ddd;
+      }
+      
+      /* Add single border under header */
+      thead tr::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #ddd;
+      }
+      
+      /* Remove any remaining borders */
+      .filename-cell, .size-cell {
+        border: none;
+      }
+      
+      td.actions-cell {
+        grid-column: 1 / -1;
+        border: none;
+      }
+    }
+
+    /* Update tooltip positioning for narrow layout */
+    @media (max-width: 250px) {
+      [aria-label]:hover::after {
+        bottom: 100%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        margin-bottom: 4px;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+  body {
+    background-color: #151a1e; /* Dark background */
+    color: #e0e0e0;
+  }
+
+  .pdf-table {
+    border-color: #444;
+  }
+
+  .pdf-table th, .pdf-table td {
+    color: #e0e0e0;
+    border-bottom: 1px solid #444;
+  }
+
+  .icon-button {
+    background: #333;
+  }
+
+  .icon-button:hover {
+    background-color: #555;
+  }
+
+  .icon-button img {
+    filter: brightness(0.8);
+  }
+
+  .icon-button:hover img {
+    filter: brightness(1);
+  }
+}
+  </style>
+</head>
+<body>
+  <div id="tableContainer">
+    <table class="pdf-table">
+      <thead>
+        <tr>
+          <th class="filename-cell">Name</th>
+          <th class="size-cell">Size</th>
+          <th class="actions-cell">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="pdfList"><tr><td colspan="3">No PDF attachments found.</td></tr></tbody>
+    </table>
+  </div>
+
+  <script src="./zaf_sdk.min(1).js.download"></script>
+  <script>
+  var client = ZAFClient.init();
+
+function adjustAppHeight() {
+  const tableContainer = document.getElementById('tableContainer');
+  const contentHeight = tableContainer.scrollHeight; // Get actual content height
+  const defaultHeight = 600; // Base height
+
+  // Ensure iframe is resized correctly and doesn't force extra space
+  client.invoke('resize', {
+    width: '100%',
+    height: Math.max(contentHeight, defaultHeight), // Expand only if needed
+    minWidth: 400
+  });
+}
+
+// Adjust height on load and when content changes
+window.addEventListener('load', adjustAppHeight);
+window.addEventListener('resize', adjustAppHeight);
+new MutationObserver(adjustAppHeight).observe(document.getElementById('tableContainer'), { childList: true, subtree: true });
+
+    // Modify the ticket comments handling
+    client.get('ticket.id').then(function(data) {
+      const ticketId = data['ticket.id'];
+      
+      // Get comments with attachments
+      client.request(`/api/v2/tickets/${ticketId}/comments`).then(function(response) {
+        console.log('Comments response:', response);
+        
+        const pdfFilenames = [];
+        
+        if (response.comments) {
+          response.comments.forEach(comment => {
+            if (comment.attachments) {
+              comment.attachments.forEach(attachment => {
+                if (attachment.content_type === 'application/pdf') {
+                  pdfFilenames.push({
+                    filename: attachment.file_name,
+                    url: attachment.content_url,
+                    size: attachment.size
+                  });
+                }
+              });
+            }
+          });
+        }
+
+        // Sort PDFs by filename
+        pdfFilenames.sort((a, b) => a.filename.localeCompare(b.filename));
+        console.log('All PDF files:', pdfFilenames);
+        
+        // Load the list once with all PDFs
+        loadPdfList(pdfFilenames);
+      }).catch(error => {
+        console.error('Error getting comments:', error);
+        loadPdfList([]);
+      });
+    }).catch(error => {
+      console.error('Error getting ticket ID:', error);
+      loadPdfList([]);
+    });
+
+    function formatFileSize(bytes) {
+      if (!bytes) return 'N/A';
+      const units = ['B', 'KB', 'MB', 'GB'];
+      let size = bytes;
+      let unitIndex = 0;
+      while (size >= 1024 && unitIndex < units.length - 1) {
+        size /= 1024;
+        unitIndex++;
+      }
+      return `${size.toFixed(1)} ${units[unitIndex]}`;
+    }
+
+    function loadPdfList(pdfFilenames) {
+      var pdfList = document.getElementById('pdfList');
+      if (pdfFilenames.length === 0) {
+        pdfList.innerHTML = '<tr><td colspan="3">No PDF attachments found.</td></tr>';
+      } else {
+        pdfFilenames.forEach(function(pdf) {
+          console.log('Processing PDF:', {
+            filename: pdf.filename,
+            size: pdf.size,
+            fullPdf: pdf
+          }); // Log each PDF's data as we process it
+          var row = document.createElement('tr');
+
+          // Filename cell
+          var filenameCell = document.createElement('td');
+          filenameCell.className = 'filename-cell';
+          filenameCell.innerText = pdf.filename;
+
+          // Size cell
+          var sizeCell = document.createElement('td');
+          sizeCell.className = 'size-cell';
+          sizeCell.innerText = formatFileSize(pdf.size);
+          console.log('Formatted size:', formatFileSize(pdf.size)); // Log the formatted size
+
+          // Actions cell
+          var actionsCell = document.createElement('td');
+          actionsCell.className = 'actions-cell';
+          var buttonContainer = document.createElement('div');
+          buttonContainer.className = 'button-container';
+
+          // Create buttons (same as before)
+          var modalButton = document.createElement('button');
+          modalButton.className = 'icon-button';
+          modalButton.setAttribute('aria-label', 'Open in Window');  // Replace title with aria-label
+          modalButton.innerHTML = '<img src="icons/maximize-fill.svg" alt="Open in Modal" />';
+          modalButton.onclick = function() { openPdfInModal(pdf.url); };
+
+          var openButton = document.createElement('button');
+          openButton.className = 'icon-button';
+          openButton.setAttribute('aria-label', 'Open in New Tab');  // Replace title with aria-label
+          openButton.innerHTML = '<img src="icons/new-window-fill.svg" alt="Open in New Tab" />';
+          openButton.onclick = function() { 
+            window.open('pdf_viewer.html?url=' + encodeURIComponent(pdf.url), '_blank');
+          };
+
+          var downloadButton = document.createElement('button');
+          downloadButton.className = 'icon-button';
+          downloadButton.setAttribute('aria-label', 'Download PDF');  // Replace title with aria-label
+          downloadButton.innerHTML = '<img src="icons/download-fill.svg" alt="Download PDF" />';
+          downloadButton.onclick = function() { 
+            const link = document.createElement('a');
+            link.href = pdf.url;
+            link.download = pdf.filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          };
+
+          buttonContainer.appendChild(modalButton);
+          buttonContainer.appendChild(openButton);
+          buttonContainer.appendChild(downloadButton);
+          actionsCell.appendChild(buttonContainer);
+
+          // Append cells to row
+          row.appendChild(filenameCell);
+          row.appendChild(sizeCell);
+          row.appendChild(actionsCell);
+          pdfList.appendChild(row);
+        });
+      }
+    }
+
+    function openPdfInModal(url) {
+      // Ensure the URL is absolute
+      const absoluteUrl = new URL(url, window.location.origin).href; // Convert to absolute URL
+      client.invoke('instances.create', {
+        location: 'modal',
+        url: 'assets/pdf_viewer.html?url=' + encodeURIComponent(absoluteUrl), // Use the absolute URL
+        size: { width: 1000, height: 600 }
+      });
+    }
+    function applyDarkModeStyles(isDarkMode) {
+  document.body.classList.toggle('dark-mode', isDarkMode);
+}
+
+// Check system preference
+const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyDarkModeStyles(isDarkMode);
+
+// Listen for changes in theme preference
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+  applyDarkModeStyles(event.matches);
+});
+
+  </script>
+
+</body></html>

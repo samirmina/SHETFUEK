@@ -1,0 +1,10 @@
+{
+  "builtAt": 1791935198530,
+  "sourceMtimes": {
+    "sop": 1791449125241.5454,
+    "macros": 1791234778000,
+    "reference": 1791201124000
+  },
+  "totalChunks": 740,
+  "embeddingModel": "mxbai-embed-large"
+}

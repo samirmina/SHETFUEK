@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  overflow-y: hidden;
+}
+
+#content {
+  padding: 0;
+}
+
+/* ── Alert banner ───────────────────────────────────────────── */
+
+.alert-wrapper {
+  border: 1px solid #f79a3e;
+  border-radius: 4px;
+  background-color: #fff8ed;
+  overflow: hidden;
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background-color: #fef0d6;
+  border-bottom: 1px solid #f79a3e;
+}
+
+.alert-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #7d4e00;
+  font-size: 13px;
+}
+
+.alert-icon {
+  font-size: 15px;
+}
+
+.dismiss-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #7d4e00;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 2px;
+  opacity: 0.7;
+}
+
+.dismiss-btn:hover {
+  opacity: 1;
+}
+
+/* ── Ticket rows ────────────────────────────────────────────── */
+
+.ticket-list {
+  padding: 4px 0;
+}
+
+.ticket-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-bottom: 1px solid #fde8c4;
+  gap: 8px;
+}
+
+.ticket-row:last-child {
+  border-bottom: none;
+}
+
+.ticket-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.ticket-id {
+  font-weight: 600;
+  color: #1f73b7;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.ticket-subject {
+  color: #49545c;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view-btn {
+  flex-shrink: 0;
+  background-color: #1f73b7;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.view-btn:hover {
+  background-color: #1a5f9a;
+}
+
+.view-btn:active {
+  background-color: #144d80;
+}
+
+/* ── Overflow note ──────────────────────────────────────────── */
+
+.overflow-note {
+  padding: 5px 10px;
+  font-size: 11px;
+  color: #87929d;
+  font-style: italic;
+}
+
+/* ── Dark mode ──────────────────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #151a1e;
+  }
+
+  .alert-wrapper {
+    border-color: #c77200;
+    background-color: #1e1710;
+  }
+
+  .alert-header {
+    background-color: #2a1f0a;
+    border-bottom-color: #c77200;
+  }
+
+  .alert-title {
+    color: #f8d59a;
+  }
+
+  .dismiss-btn {
+    color: #f8d59a;
+  }
+
+  .ticket-row {
+    border-bottom-color: #2a1f0a;
+  }
+
+  .ticket-id {
+    color: #6ab4f5;
+  }
+
+  .ticket-subject {
+    color: #c2c8cc;
+  }
+
+  .overflow-note {
+    color: #68737d;
+  }
+}

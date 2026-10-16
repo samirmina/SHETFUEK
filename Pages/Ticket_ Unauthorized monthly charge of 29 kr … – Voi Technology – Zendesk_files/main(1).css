@@ -1,0 +1,181 @@
+
+td {
+  color: #68737d;
+}
+
+table {
+	width: 100%;
+}
+
+.data {
+  color: #228f67;
+  padding-left: 2px;
+}
+
+.data button {
+	display: inline-block;
+	white-space: normal;
+}
+
+#error-message {
+    color: #e35b66;
+}
+
+.key {
+  color: black;
+}
+.value {
+  color: #363;
+}
+#content td {
+  padding-top: 2px;
+}
+
+footer {
+  font-size: 10px;
+  padding-top: 20px;
+}
+
+th {
+    font-size: 16px; /* Set the font size for th elements */
+    font-weight: bold; /* Make the text bold */
+    text-align: left; /* Align the text to the left */
+    padding-top: 5px;
+}
+
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.c-txt__input.c-txt__input--select {
+  color: #228f67;
+  padding: 5px;
+  border-radius: 5px;
+  max-width: 125px;
+}
+
+
+.c-btn {
+	width: 130px;
+	margin-left: 10px;
+}
+
+.c-btn:hover {
+  background-color: #1f73b7; /* Change this to the color you want on hover */
+  color: #fff; /* Change this to the text color you want on hover */
+}
+
+.c-btn:active {
+  background-color: #fff; /* Change this to the color you want on click */
+  color: #1f73b7; /* Change this to the text color you want on click */
+    transition-duration: 0.1s; /* Adjust the duration for the :active state */
+
+}
+
+.accordion {
+    
+  font-size: 16px; /* Set the font size for th elements */
+  font-weight: bold; /* Make the text bold */
+  text-align: left; /* Align the text to the left */
+  padding-top: 5px;
+  background-color: #fff;
+  color: #444;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border-bottom: 1px solid rgb(216, 220, 222);
+  padding-bottom: 5px;
+}
+
+.active, .accordion:hover {
+  color: #1f73b7; 
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 5px 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+ 
+}
+
+@media screen and (max-width: 200px) {
+    table,
+    table tr,
+    table td {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .data {
+        margin-bottom: 5px; /* Add space between rows in column layout */
+        display: flex;
+
+    }
+	.c-btn {
+	margin-top: 5px;
+	margin-left: 0px;
+	margin-bottom: 5px;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+      background-color: #151a1e; /* Dark background */
+      color: #e0e0e0; /* Light text color */
+  }
+
+  table {
+      background-color: #151a1e; /* Dark table background */
+  }
+
+  .data {
+      color: #a5d6a7; /* Light green for data */
+  }
+
+  #error-message {
+      color: #ff6f61; /* Lighter error message color */
+  }
+
+  .key {
+      color: #e0e0e0; /* Light color for keys */
+  }
+
+  .value {
+      color: #c8e6c9; /* Light color for values */
+  }
+
+  .accordion {
+      background-color: #151a1e; /* Dark background for accordion */
+      color: #e0e0e0; /* Light text color for accordion */
+  }
+
+  .active, .accordion:hover {
+      color: #bb86fc; /* Accent color for active and hover states */
+  }
+
+  .panel {
+      background-color: #151a1e; /* Dark background for panel */
+  }
+
+  .c-txt__input.c-txt__input--select {
+    background-color: #151a1e; /* Dark background for accordion */
+    color: #e0e0e0; /* Light text color for accordion */
+}
+

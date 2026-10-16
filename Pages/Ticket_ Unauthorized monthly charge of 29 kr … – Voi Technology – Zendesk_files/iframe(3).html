@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0220)https://1280301.apps.zdusercontent.com/1280301/assets/1790170823-3bddf990a01041401d5a97f96c2df5e8/iframe.html?origin=https%3A%2F%2Fvoitechnology.zendesk.com&app_guid=6544904b-a599-41b7-a284-f226fc5b0aec&colorScheme=light -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <link rel="stylesheet" href="./css-utilities@4.5.5">
+  <link href="./main(2).css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="content"></div>
+
+  <!-- ── Alert template ───────────────────────────────────────── -->
+  <script id="alert-template" type="text/x-handlebars-template">
+    <div class="alert-wrapper">
+
+      <div class="alert-header">
+        <div class="alert-title">
+          <span class="alert-icon">⚠️</span>
+          {{#if moreThanOne}}
+            This user has {{count}} other active tickets
+          {{else}}
+            This user has 1 other active ticket
+          {{/if}}
+        </div>
+        <button class="dismiss-btn" id="dismiss-btn" title="Dismiss">✕</button>
+      </div>
+
+      <div class="ticket-list">
+        {{#each tickets}}
+        <div class="ticket-row">
+          <div class="ticket-meta">
+            <a class="ticket-id" href="https://voitechnology.zendesk.com/agent/tickets/{{id}}" target="_blank">#{{id}}</a>
+            <span class="ticket-status status-{{status}}">{{status}}</span>
+            <span class="ticket-subject">{{subject}}</span>
+          </div>
+        </div>
+        {{/each}}
+
+        {{#if hasMore}}
+        <div class="overflow-note">+ {{extraCount}} more — search by requester to see all</div>
+        {{/if}}
+      </div>
+
+    </div>
+  </script>
+
+  <script src="./zaf_sdk.min(1).js.download"></script>
+  <script src="./handlebars.min.js.download"></script>
+  <script src="./main(3).js.download"></script>
+
+
+
+</body></html>

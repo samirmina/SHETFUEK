@@ -1,0 +1,9 @@
+**/node_modules
+**/*.log
+Pages
+extension/backup
+diag.txt
+diag_payload.json
+stats_payload.json
+clear_payload.json
+test_ollama.js

@@ -1,0 +1,56 @@
+// Initialize the ZAFClient
+var client = ZAFClient.init();
+var ticketId;
+
+client.get('ticket.id').then(function(data) {
+    ticketId = data['ticket.id'];
+});
+
+// Resize the client iframe
+client.invoke('resize', { width: '300px', height: '100px' });
+
+// Listen to the app.activated event and invoke resize
+client.on('app.activated', function() {
+    client.invoke('resize', { width: '100%', height: 'auto' });
+});
+
+var message = document.createElement('div');
+message.textContent = 'Select Email:';
+message.className = 'select-email-message'; // Assign a class name
+document.body.appendChild(message);
+
+var select = document.createElement('select'); // Define select at the beginning
+
+client.get('ticket.recipient').then(function(data) {
+    var currentRecipient = data['ticket.recipient'];
+    client.request('/api/v2/recipient_addresses.json').then(function(response) {
+        var addresses = response.recipient_addresses;
+        addresses.forEach(address => {
+            var option = document.createElement('option');
+            option.value = address.email;
+            option.textContent = address.email;
+            if (address.email === currentRecipient) {
+                option.selected = true;
+            }
+            select.appendChild(option);
+        });
+        select.addEventListener('change', function() {
+            var email = this.value;
+            var data = { "ticket": { "recipient": email } };
+            client.request({
+                url: '/api/v2/tickets/' + ticketId + '.json',
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(data)
+            }).then(function(response) {
+                console.log('Ticket updated:', response);
+            }).catch(function(error) {
+                console.error('Failed to update ticket:', error);
+            });
+        });
+        document.body.appendChild(select); // Append select after it's fully populated
+    }).catch(function(error) {
+        console.error("Failed to fetch recipient addresses:", error);
+    });
+});
+

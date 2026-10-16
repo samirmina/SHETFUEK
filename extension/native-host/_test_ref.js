@@ -1,0 +1,12 @@
+const fs = require('fs');
+const ref = JSON.parse(fs.readFileSync('D:/SHETFUEK/extension/SOP_Reference_Macros_IssueTypes.json', 'utf8'));
+const all = new Set();
+for (const e of ref) for (const m of (e.macros || [])) all.add(m);
+const liveChatCapC = [...all].filter(m => /^LiveChat::/.test(m));
+const liveChatLowC = [...all].filter(m => /^Livechat::/.test(m));
+const normalize = s => s.replace(/::/g, '_').replace(/[^a-zA-Z0-9_]/g, '').replace(/_+/g, '_').replace(/^_|_$/g, '').toLowerCase();
+console.log('LiveChat:: (capital C):', liveChatCapC.length);
+console.log(liveChatCapC.map(normalize).join('\n'));
+console.log('\nLivechat:: (lowercase c):', liveChatLowC.length);
+console.log(liveChatLowC.map(normalize).join('\n'));
+console.log('\nTOTAL all macros in reference:', all.size);
